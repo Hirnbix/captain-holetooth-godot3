@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/screens/character-cards/character-cards-main-node.gd" type="Script" id=1]
+[ext_resource path="res://src/screens/character-cards/character_card_container.gd" type="Script" id=2]
+[ext_resource path="res://src/screens/character-cards/character-card-bg-pattern.png" type="Texture" id=3]
+[ext_resource path="res://src/screens/menu/close_button.png" type="Texture" id=4]
+
+[node name="character-cards" type="Control"]
+
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 512.0
+margin_bottom = 288.0
+script = ExtResource( 1 )
+
+[node name="card-container-scrollable" type="ScrollContainer" parent="."]
+
+anchor_left = 1
+anchor_top = 1
+anchor_right = 1
+anchor_bottom = 1
+rect_min_size = Vector2( 512, 600 )
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+margin_left = 512.0
+margin_top = 288.0
+margin_right = -12.0
+margin_bottom = -312.0
+scroll_horizontal = false
+scroll_vertical = true
+
+[node name="card_container" type="VBoxContainer" parent="card-container-scrollable"]
+
+rect_min_size = Vector2( 512, 1024 )
+focus_ignore_mouse = false
+focus_stop_mouse = false
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 512.0
+margin_bottom = 1024.0
+alignment = 0
+script = ExtResource( 2 )
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+
+show_behind_parent = true
+focus_ignore_mouse = true
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 512.0
+margin_bottom = 288.0
+texture = ExtResource( 3 )
+self_modulate = Color( 0.211258, 0.277344, 0.233975, 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+texture_normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[connection signal="pressed"  from="TextureButton"  to="." method="_on_TextureButton_pressed" binds=[  ]]
