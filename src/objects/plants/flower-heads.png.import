@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/flower-heads.png-7aa7a296f2e55b5f3518fea1042b330c.stex"
 
+[deps]
+
+source_md5="d4258c7c453e1a6436db6c809ba871ac"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

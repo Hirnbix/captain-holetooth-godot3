@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/ship_wing.png-7f4eca336c2a44ba85905d3111cce94b.stex"
 
+[deps]
+
+source_md5="91acf4f55e0d35b3168da8df45dfa633"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

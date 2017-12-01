@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/sugar_cube_shot_01.png-fabd12a9af9491df2b82e3044a423953.stex"
 
+[deps]
+
+source_md5="12e0f54cf3fce00ad78a094aaaa424d2"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

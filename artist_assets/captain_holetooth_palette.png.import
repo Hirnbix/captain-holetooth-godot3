@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/captain_holetooth_palette.png-f2f48a42c68953aea3e7d1b3f376130f.stex"
 
+[deps]
+
+source_md5="97ffb1aa066df3527615cf5da455e108"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

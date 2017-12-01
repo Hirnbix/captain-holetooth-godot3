@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/sugarcubes_from_hell_01.png-573f534b8286ca08b05f06f85c722458.stex"
 
+[deps]
+
+source_md5="e75bec676bd6302c13c69cd3ca8cb024"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

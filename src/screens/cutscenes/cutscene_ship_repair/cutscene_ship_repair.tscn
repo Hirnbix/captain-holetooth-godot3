@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/screens/cutscenes/cutscene_ship_repair/cutscene_ship_repair.gd" type="Script" id=1]
-[ext_resource path="res://src/fonts/berry8.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://src/fonts/berry8.font" type="BitmapFont" id=2]
 [ext_resource path="res://src/screens/cutscenes/cutscene_ship_repair/cutscene_ship_repair.png" type="Texture" id=3]
 [ext_resource path="res://src/audio/music_player/music_player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/audio/music/scn2_comic_music.ogg" type="AudioStream" id=5]

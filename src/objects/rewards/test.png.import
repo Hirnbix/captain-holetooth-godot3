@@ -2,7 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test.png-1bfd1af7ed01715939549ac41a2028aa.stex"
+valid=false
+
+[deps]
+
+source_md5="828ba5655584e5050720b511fcbc9e4b"
 
 [params]
 
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

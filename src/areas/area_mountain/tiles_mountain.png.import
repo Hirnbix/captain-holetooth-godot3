@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/tiles_mountain.png-eacc3bc517cf8397b438db4c422b48dd.stex"
 
+[deps]
+
+source_md5="34a5769b4e24002b6dc75c4390a74d21"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

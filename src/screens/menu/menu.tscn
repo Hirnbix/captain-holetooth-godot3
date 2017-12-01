@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://src/screens/menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://src/screens/menu/scn1_menu_gametitle_EN.png" type="Texture" id=2]
@@ -10,20 +10,20 @@
 [ext_resource path="res://src/screens/menu/skull_eye.gd" type="Script" id=8]
 [ext_resource path="res://src/objects/waterdrops/waterdrop.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/menu/splash_screen_lochzahn_candy_hat.png" type="Texture" id=10]
-[ext_resource path="res://src/fonts/newsgeek20.fnt" type="BitmapFont" id=11]
-[ext_resource path="res://src/fonts/newsgeek16.fnt" type="BitmapFont" id=12]
+[ext_resource path="res://src/fonts/newsgeek20.font" type="BitmapFont" id=11]
+[ext_resource path="res://src/fonts/newsgeek16.font" type="BitmapFont" id=12]
 [ext_resource path="res://src/audio/music_player/music_player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/audio/music/scn1_menu_music.ogg" type="AudioStream" id=14]
 [ext_resource path="res://src/audio/sfx/sfx.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/screens/menu/options_screen.gd" type="Script" id=16]
-[ext_resource path="res://src/fonts/berry12.fnt" type="BitmapFont" id=17]
-[ext_resource path="res://src/fonts/berry8.fnt" type="BitmapFont" id=18]
+[ext_resource path="res://src/fonts/berry12.font" type="BitmapFont" id=17]
+[ext_resource path="res://src/fonts/berry8.font" type="BitmapFont" id=18]
 [ext_resource path="res://src/screens/menu/ui_templates/tab_styleboxflat.tres" type="StyleBox" id=19]
 [ext_resource path="res://src/screens/menu/ui_templates/tab_panel_flat.tres" type="StyleBox" id=20]
-[ext_resource path="res://src/fonts/berry16.fnt" type="BitmapFont" id=21]
+[ext_resource path="res://src/fonts/berry16.font" type="BitmapFont" id=21]
 [ext_resource path="res://src/screens/menu/ui_templates/button_theme.tres" type="Theme" id=22]
 [ext_resource path="res://src/screens/global-ui-templates/menu_buttons.tres" type="StyleBox" id=23]
-[ext_resource path="res://src/fonts/menufont_24.fnt" type="BitmapFont" id=24]
+[ext_resource path="res://src/fonts/menufont_24.font" type="BitmapFont" id=24]
 [ext_resource path="res://src/screens/ui-icons/icon-font-18/PNG/untitled-e90d.png" type="Texture" id=25]
 [ext_resource path="res://src/screens/menu/donate_button.tex" type="Texture" id=26]
 [ext_resource path="res://src/screens/menu/close_button.png" type="Texture" id=27]
@@ -38,6 +38,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("gametitle:position")
 tracks/0/interp = 2
+tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5 ),
@@ -48,6 +49,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("keyvisual_lochzahn:scale")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
@@ -58,6 +60,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("splashscreen_schiff:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/keys = {
 "times": PoolRealArray( 0, 2.5 ),
@@ -68,6 +71,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("splashscreen_schiff/splashscreen_schiff1:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1.5 ),
@@ -78,6 +82,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("splashscreen_schiff/splashscreen_schiff1:scale")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/keys = {
 "times": PoolRealArray( 0, 3.3 ),
@@ -88,6 +93,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("../character-cards:rect/pos")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/keys = {
 "times": PoolRealArray( 1.15, 1.35, 1.4, 1.45, 1.55, 1.65, 1.75, 1.8 ),
@@ -98,6 +104,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("../character-cards:rect_rotation")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/keys = {
 "times": PoolRealArray(  ),
@@ -115,6 +122,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("keyvisual_lochzahn/candy_skull_button/candy_skull:rotation_deg")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28 ),
@@ -125,6 +133,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("keyvisual_lochzahn/candy_skull_button/candy_skull:frame")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.28 ),
@@ -140,11 +149,26 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 bg_color = Color( 0.768627, 0.615686, 0.415686, 1 )
-light_color = Color( 0.768627, 0.615686, 0.415686, 1 )
-dark_color = Color( 0.574219, 0.458553, 0.307297, 1 )
-border_size = 0
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
 border_blend = true
-draw_bg = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
 
 [sub_resource type="Theme" id=4]
 
@@ -192,14 +216,15 @@ func _process(delta):
 
 [node name="main_menu" type="Control"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
 script = ExtResource( 1 )
 game_title_path = NodePath("art/gametitle")
 menu_buttons_path = NodePath("menu_buttons")
@@ -209,7 +234,6 @@ music_volume_slider_path = NodePath("options_screen/settings/Audio/vbox/hbox/vol
 animations_path = NodePath("art/anims")
 
 [node name="art" type="Node2D" parent="."]
-
 
 [node name="gametitle" type="Sprite" parent="art"]
 
@@ -221,15 +245,14 @@ region_rect = Rect2( 8, 1, 264, 152 )
 
 [node name="gametitle1" type="Sprite" parent="art/gametitle"]
 
+self_modulate = Color( 0, 0, 0, 0.371608 )
 position = Vector2( 0, 3 )
 z = -1
 texture = ExtResource( 2 )
-self_modulate = Color( 0, 0, 0, 0.371608 )
 region_rect = Rect2( 8, 1, 264, 152 )
 
 [node name="bg" type="Node2D" parent="art"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -253,20 +276,35 @@ __meta__ = {
 
 [node name="splashscreen_schiff1" type="Sprite" parent="art/splashscreen_schiff"]
 
+self_modulate = Color( 0, 0, 0, 0.326798 )
 position = Vector2( 15.6, 5.45 )
 scale = Vector2( 0.8, 0.8 )
 z = 2
 z_as_relative = false
 texture = ExtResource( 4 )
-self_modulate = Color( 0, 0, 0, 0.326798 )
 
 [node name="thruster" parent="art/splashscreen_schiff" instance=ExtResource( 5 )]
 
 position = Vector2( 85.0126, 23.0998 )
-rotation_deg = 94.9
 scale = Vector2( 1, -1.78624 )
-config/process_mode = 1
-config/flip_h = true
+emitting = true
+amount = 8
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = null
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
 
 [node name="anims" type="AnimationPlayer" parent="art"]
 
@@ -312,19 +350,23 @@ scale = Vector2( 1, 1.3446 )
 
 [node name="candy_skull_button" type="TextureButton" parent="art/keyvisual_lochzahn"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = -125.0
 margin_top = -129.0
 margin_right = -85.0
 margin_bottom = -89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-params/resize_mode = 0
-params/stretch_mode = 0
+group = null
 
 [node name="candy_skull" type="Sprite" parent="art/keyvisual_lochzahn/candy_skull_button"]
 
@@ -334,56 +376,67 @@ hframes = 2
 
 [node name="menu_buttons" type="VBoxContainer" parent="."]
 
-anchor_left = 2
-anchor_top = 2
-anchor_right = 2
-anchor_bottom = 2
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 1
-size_flags_vertical = 1
-size_flags_stretch_ratio = 2.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = -312.0
 margin_top = -160.0
 margin_right = -492.0
 margin_bottom = -289.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
 alignment = 1
 
 [node name="startbutton" type="Button" parent="menu_buttons"]
 
-visibility/blend_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 583.0
+margin_top = 203.0
+margin_right = 763.0
+margin_bottom = 246.0
 rect_min_size = Vector2( 180, 43 )
-focus_ignore_mouse = false
-focus_stop_mouse = false
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 0.0
-margin_top = 23.0
-margin_right = 180.0
-margin_bottom = 66.0
 custom_fonts/font = ExtResource( 11 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Start Game"
 flat = false
 
 [node name="optionsbutton" type="Button" parent="menu_buttons"]
 
-visibility/blend_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 583.0
+margin_top = 250.0
+margin_right = 733.0
+margin_bottom = 285.0
 rect_min_size = Vector2( 150, 35 )
-focus_ignore_mouse = false
-focus_stop_mouse = false
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 0.0
-margin_top = 70.0
-margin_right = 180.0
-margin_bottom = 105.0
 custom_fonts/font = ExtResource( 12 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Options / Info"
 flat = false
 
@@ -393,7 +446,6 @@ stream = ExtResource( 14 )
 
 [node name="sfx" parent="." instance=ExtResource( 15 )]
 
-
 [node name="options_screen" type="Node2D" parent="."]
 
 visible = false
@@ -402,15 +454,19 @@ script = ExtResource( 16 )
 
 [node name="settings" type="TabContainer" parent="options_screen"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
-theme = SubResource( 4 )
-margin_left = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 16.0
 margin_right = 510.0
 margin_bottom = 290.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = SubResource( 4 )
 custom_styles/tab_fg = ExtResource( 19 )
 custom_styles/panel = ExtResource( 20 )
 tab_align = 0
@@ -418,30 +474,35 @@ tabs_visible = true
 
 [node name="Instructions" type="Tabs" parent="options_screen/settings"]
 
-anchor_right = 1
-anchor_bottom = 1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_neighbour_right = NodePath("../Debug")
-focus_ignore_mouse = false
-focus_stop_mouse = true
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 12.0
-margin_top = 23.0
-margin_right = 12.0
-margin_bottom = 1.0
+scrolling_enabled = true
 
 [node name="instruction_text" type="RichTextLabel" parent="options_screen/settings/Instructions"]
 
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 16.0
 margin_top = 14.0
 margin_right = 16.0
 margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_fonts/normal_font = ExtResource( 18 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = false
@@ -459,149 +520,189 @@ CONTROLS
 	
 Enjoy :)"
 visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
 
 [node name="Debug" type="Tabs" parent="options_screen/settings"]
 
 visible = false
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 12.0
-margin_top = 23.0
-margin_right = 12.0
-margin_bottom = 1.0
 custom_styles/tab_fg = ExtResource( 19 )
 custom_fonts/font = ExtResource( 21 )
+scrolling_enabled = true
 script = SubResource( 5 )
 
 [node name="jump_scn3" type="Button" parent="options_screen/settings/Debug"]
 
-focus_neighbour_top = NodePath("../jump_minigame")
-focus_neighbour_bottom = NodePath("../jump_scn4")
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
-theme = ExtResource( 22 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 10.0
 margin_right = 246.0
 margin_bottom = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_minigame")
+focus_neighbour_bottom = NodePath("../jump_scn4")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 22 )
 custom_fonts/font = ExtResource( 18 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Forest Level"
 flat = false
 
 [node name="jump_scn4" type="Button" parent="options_screen/settings/Debug"]
 
-focus_neighbour_top = NodePath("../jump_scn3")
-focus_neighbour_bottom = NodePath("../jump_scn5")
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
-theme = ExtResource( 22 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 50.0
 margin_right = 246.0
 margin_bottom = 82.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_scn3")
+focus_neighbour_bottom = NodePath("../jump_scn5")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 22 )
 custom_fonts/font = ExtResource( 18 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Mountain Level"
 flat = false
 
 [node name="jump_scn5" type="Button" parent="options_screen/settings/Debug"]
 
-focus_neighbour_top = NodePath("../jump_scn4")
-focus_neighbour_bottom = NodePath("../jump_castle")
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
-theme = ExtResource( 22 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 91.0
 margin_right = 246.0
 margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_scn4")
+focus_neighbour_bottom = NodePath("../jump_castle")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 22 )
 custom_fonts/font = ExtResource( 18 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Fly home Level"
 flat = false
 
 [node name="jump_castle" type="Button" parent="options_screen/settings/Debug"]
 
-focus_neighbour_bottom = NodePath("../jump_minigame")
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
-theme = ExtResource( 22 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 130.0
 margin_right = 246.0
 margin_bottom = 162.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_bottom = NodePath("../jump_minigame")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 22 )
 custom_fonts/font = ExtResource( 18 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Castle Level"
 flat = false
 
 [node name="jump_minigame" type="Button" parent="options_screen/settings/Debug"]
 
-focus_neighbour_top = NodePath("../jump_castle")
-focus_neighbour_bottom = NodePath("../jump_scn3")
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
-theme = ExtResource( 22 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 178.0
 margin_right = 246.0
 margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_castle")
+focus_neighbour_bottom = NodePath("../jump_scn3")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 22 )
 custom_fonts/font = ExtResource( 18 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Play \"Yan Kandy\" Minigame"
 flat = false
 
 [node name="Parental Controls" type="Tabs" parent="options_screen/settings"]
 
 visible = false
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 12.0
-margin_top = 23.0
-margin_right = 12.0
-margin_bottom = 1.0
+scrolling_enabled = true
 
 [node name="instruction_text" type="RichTextLabel" parent="options_screen/settings/Parental Controls"]
 
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 16.0
 margin_top = 14.0
 margin_right = 16.0
 margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_fonts/normal_font = ExtResource( 18 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
@@ -609,29 +710,40 @@ bbcode_text = "Hello parents!
 You are able to limit the daily playtime here and set the parental code.
 If you have more questions go to [url=https://www.hirnbix.com/parentalcontrols]https://www.hirnbix.com/parentalcontrols[/url]"
 visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
 
 [node name="playtime_settings" type="HBoxContainer" parent="options_screen/settings/Parental Controls"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 16.0
 margin_top = 66.0
 margin_right = 468.0
 margin_bottom = 91.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
 alignment = 0
 
 [node name="playtime_limit_label" type="Label" parent="options_screen/settings/Parental Controls/playtime_settings"]
 
-focus_ignore_mouse = true
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
-margin_left = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 6.0
 margin_right = 218.0
 margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
 text = "Adjust the duration of gameplay (in minutes)"
 percent_visible = 1.0
 lines_skipped = 0
@@ -639,30 +751,40 @@ max_lines_visible = -1
 
 [node name="playtime_limit" type="LineEdit" parent="options_screen/settings/Parental Controls/playtime_settings"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 222.0
 margin_top = 1.0
 margin_right = 268.0
 margin_bottom = 23.0
-placeholder_alpha = 0.6
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
 max_length = 2
 focus_mode = 2
+placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
+context_menu_enabled = true
 
 [node name="playtime_confirm" type="Button" parent="options_screen/settings/Parental Controls/playtime_settings"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 272.0
-margin_top = 0.0
 margin_right = 359.0
 margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_styles/pressed = ExtResource( 23 )
 custom_styles/normal = ExtResource( 23 )
 custom_fonts/font = ExtResource( 24 )
@@ -670,6 +792,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 text = "Confirm"
 icon = ExtResource( 25 )
 flat = false
@@ -678,54 +801,64 @@ flat = false
 
 editor/display_folded = true
 visible = false
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 12.0
-margin_top = 23.0
-margin_right = 12.0
-margin_bottom = 1.0
+scrolling_enabled = true
 
 [node name="vbox" type="VBoxContainer" parent="options_screen/settings/Audio"]
 
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
 size_flags_horizontal = 2
 size_flags_vertical = 2
-margin_left = 0.0
-margin_top = 30.0
-margin_right = 0.0
-margin_bottom = 0.0
 alignment = 0
 
 [node name="hbox" type="HBoxContainer" parent="options_screen/settings/Audio/vbox"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
-margin_left = 0.0
-margin_top = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 486.0
 margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_constants/separation = 20
 alignment = 0
 
 [node name="music_volume_label" type="Label" parent="options_screen/settings/Audio/vbox/hbox"]
 
-focus_ignore_mouse = true
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
-margin_left = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 2.0
 margin_right = 68.0
 margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
 text = "Music Volume:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -733,15 +866,19 @@ max_lines_visible = -1
 
 [node name="volume_slide" type="HSlider" parent="options_screen/settings/Audio/vbox/hbox"]
 
-rect_min_size = Vector2( 100, 0 )
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 88.0
-margin_top = 0.0
 margin_right = 188.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -749,33 +886,42 @@ page = 0.0
 value = 1.0
 exp_edit = false
 rounded = false
+editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
 
 [node name="hbox1" type="HBoxContainer" parent="options_screen/settings/Audio/vbox"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
-margin_left = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 20.0
 margin_right = 486.0
 margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_constants/separation = 20
 alignment = 0
 
 [node name="Sound_volume_label" type="Label" parent="options_screen/settings/Audio/vbox/hbox1"]
 
-focus_ignore_mouse = true
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
-margin_left = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 2.0
 margin_right = 72.0
 margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
 text = "Sound Volume:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -783,15 +929,19 @@ max_lines_visible = -1
 
 [node name="volume_slide" type="HSlider" parent="options_screen/settings/Audio/vbox/hbox1"]
 
-rect_min_size = Vector2( 100, 0 )
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 92.0
-margin_top = 0.0
 margin_right = 192.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -799,6 +949,7 @@ page = 0.0
 value = 1.0
 exp_edit = false
 rounded = false
+editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
@@ -807,30 +958,35 @@ focus_mode = 2
 
 editor/display_folded = true
 visible = false
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = true
-focus_stop_mouse = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-margin_left = 12.0
-margin_top = 23.0
-margin_right = 12.0
-margin_bottom = 1.0
 custom_fonts/font = ExtResource( 21 )
+scrolling_enabled = true
 
 [node name="credits_text" type="RichTextLabel" parent="options_screen/settings/Credits"]
 
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 6.0
 margin_top = 5.0
 margin_right = 5.0
 margin_bottom = 5.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_fonts/normal_font = ExtResource( 18 )
 custom_colors/default_color = Color( 0.996078, 0.905882, 0.729412, 1 )
 bbcode_enabled = false
@@ -848,24 +1004,29 @@ Sound and music in minigame
 Music
 	Public Domain"
 visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
 
 [node name="donate_button" type="TextureButton" parent="options_screen/settings/Credits"]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 267.0
 margin_top = 139.0
 margin_right = 603.0
 margin_bottom = 287.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 texture_normal = ExtResource( 26 )
-params/resize_mode = 0
-texture_scale = Vector2( 0.6, 0.6 )
-params/stretch_mode = 0
 
 [node name="Polygon2D" type="Polygon2D" parent="options_screen"]
 
@@ -875,6 +1036,7 @@ uv = PoolVector2Array(  )
 color = Color( 0.27451, 0.156863, 0.211765, 0.876349 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
+antialiased = false
 texture = null
 texture_offset = Vector2( 0, 0 )
 texture_scale = Vector2( 1, 1 )
@@ -887,81 +1049,88 @@ __meta__ = {
 
 [node name="exitbutton" type="TextureButton" parent="options_screen"]
 
-anchor_left = 2
-anchor_top = 2
-anchor_right = 2
-anchor_bottom = 2
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = -448.0
 margin_top = 22.0
 margin_right = -488.0
 margin_bottom = -18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 texture_normal = ExtResource( 27 )
-params/resize_mode = 0
-params/stretch_mode = 0
 
 [node name="character-cards" type="Control" parent="."]
 
-focus_ignore_mouse = false
-focus_stop_mouse = true
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 168.0
 margin_top = -136.0
 margin_right = 192.0
 margin_bottom = -48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 
 [node name="character-cards-button" type="TextureButton" parent="character-cards"]
 
-anchor_left = 1
-anchor_top = 1
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = false
-focus_stop_mouse = false
-size_flags_horizontal = 2
-size_flags_vertical = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = -56.0
 margin_top = 49.0
 margin_right = -120.0
 margin_bottom = -33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+group = null
 texture_normal = ExtResource( 28 )
-params/resize_mode = 0
-params/stretch_mode = 0
 
-[connection signal="pressed"  from="art/keyvisual_lochzahn/candy_skull_button"  to="." method="_on_candy_skull_button_pressed" binds=[  ]]
+[connection signal="pressed" from="art/keyvisual_lochzahn/candy_skull_button" to="." method="_on_candy_skull_button_pressed"]
 
-[connection signal="pressed"  from="menu_buttons/startbutton"  to="." method="_on_startbutton_pressed" binds=[  ]]
+[connection signal="pressed" from="menu_buttons/startbutton" to="." method="_on_startbutton_pressed"]
 
-[connection signal="pressed"  from="menu_buttons/optionsbutton"  to="." method="_on_optionsbutton_pressed" binds=[  ]]
+[connection signal="pressed" from="menu_buttons/optionsbutton" to="." method="_on_optionsbutton_pressed"]
 
-[connection signal="tab_changed"  from="options_screen/settings"  to="options_screen" method="_on_settings_tab_changed" binds=[  ]]
+[connection signal="tab_changed" from="options_screen/settings" to="options_screen" method="_on_settings_tab_changed"]
 
-[connection signal="pressed"  from="options_screen/settings/Debug/jump_scn3"  to="." method="_on_jump_scn3_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Debug/jump_scn3" to="." method="_on_jump_scn3_pressed"]
 
-[connection signal="pressed"  from="options_screen/settings/Debug/jump_scn4"  to="." method="_on_jump_scn4_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Debug/jump_scn4" to="." method="_on_jump_scn4_pressed"]
 
-[connection signal="pressed"  from="options_screen/settings/Debug/jump_scn5"  to="." method="_on_jump_scn5_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Debug/jump_scn5" to="." method="_on_jump_scn5_pressed"]
 
-[connection signal="pressed"  from="options_screen/settings/Debug/jump_castle"  to="." method="_on_jump_castle_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Debug/jump_castle" to="." method="_on_jump_castle_pressed"]
 
-[connection signal="pressed"  from="options_screen/settings/Debug/jump_minigame"  to="." method="_on_jump_minigame_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Debug/jump_minigame" to="." method="_on_jump_minigame_pressed"]
 
-[connection signal="pressed"  from="options_screen/settings/Parental Controls/playtime_settings/playtime_confirm"  to="." method="_on_playtime_confirm_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Parental Controls/playtime_settings/playtime_confirm" to="." method="_on_playtime_confirm_pressed"]
 
-[connection signal="value_changed"  from="options_screen/settings/Audio/vbox/hbox/volume_slide"  to="." method="_on_music_volume_value_changed" binds=[  ]]
+[connection signal="value_changed" from="options_screen/settings/Audio/vbox/hbox/volume_slide" to="." method="_on_music_volume_value_changed"]
 
-[connection signal="pressed"  from="options_screen/settings/Credits/donate_button"  to="." method="_on_donate_button_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/settings/Credits/donate_button" to="." method="_on_donate_button_pressed"]
 
-[connection signal="pressed"  from="options_screen/exitbutton"  to="." method="_on_exitbutton_pressed" binds=[  ]]
+[connection signal="pressed" from="options_screen/exitbutton" to="." method="_on_exitbutton_pressed"]
 
-[connection signal="pressed"  from="character-cards/character-cards-button"  to="." method="_on_charactercardsbutton_pressed" binds=[  ]]
+[connection signal="pressed" from="character-cards/character-cards-button" to="." method="_on_charactercardsbutton_pressed"]
+
+

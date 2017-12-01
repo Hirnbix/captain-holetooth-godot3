@@ -11,7 +11,7 @@
 [ext_resource path="res://src/actors/enemies/soap_bubble/soap_bubble.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/actors/enemies/tornado/tornado.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/audio/sfx/sfx.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/objects/debug_tape_under_construction/construction-tape-fox-surfboards-XhjxP7-clipart.png" type="Texture" id=12]
+[ext_resource path="" type="Texture" id=12]
 
 [node name="Node2D" type="Node2D"]
 

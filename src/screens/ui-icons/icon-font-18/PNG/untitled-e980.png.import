@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/untitled-e980.png-cdc9ead6234b9add2c788043aa3cda7e.stex"
 
+[deps]
+
+source_md5="ddeca1b3f0d20700cb51da1e41e7b424"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

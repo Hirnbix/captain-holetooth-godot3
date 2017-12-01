@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/sprite_candybal_shadingl.png-a4662cbe0f405eb28c5fb9094bc17c84.stex"
 
+[deps]
+
+source_md5="184bec109064782463680615f276a86f"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

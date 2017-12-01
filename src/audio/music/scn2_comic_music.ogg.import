@@ -4,6 +4,11 @@ importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
 path="res://.import/scn2_comic_music.ogg-f110d50bbf813488263270a31d696463.oggstr"
 
+[deps]
+
+source_md5="fb91aba0dbe4703a2fac6e71999458b5"
+
 [params]
 
 loop=true
+loop_offset=0

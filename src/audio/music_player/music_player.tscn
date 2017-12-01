@@ -1,15 +1,14 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://src/audio/music_player/music_player.gd" type="Script" id=1]
 
 [node name="music_player" type="AudioStreamPlayer"]
 
 stream = null
-playing = true
-loop = true
 volume_db = 0.0
-stream_autoplay = true
-stream_paused = false
-loop_restart_time = 0.0
-buffering_ms = 500
+autoplay = false
+mix_target = 0
+bus = "Master"
 script = ExtResource( 1 )
+
+

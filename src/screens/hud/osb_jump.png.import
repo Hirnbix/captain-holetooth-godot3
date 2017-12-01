@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/osb_jump.png-078b1905fe4b304215672795ce9573c5.stex"
 
+[deps]
+
+source_md5="57d7a5f47ef171adaa8389ec5ac66f6a"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

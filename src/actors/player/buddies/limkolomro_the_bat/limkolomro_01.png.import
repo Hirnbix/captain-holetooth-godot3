@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/limkolomro_01.png-fb923550f2755653763765f80c52f19d.stex"
 
+[deps]
+
+source_md5="daa1fd553d877c29aee67866b843a4e9"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/firefly-0005.png-3b1cc51136f439d0b6c5824b1a5d8da4.stex"
 
+[deps]
+
+source_md5="3d8a19b8d3b2d9862dbac5bec9d3650c"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

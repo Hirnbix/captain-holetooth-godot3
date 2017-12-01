@@ -114,7 +114,7 @@ func _on_music_volume_value_changed( value ):
 	global.music.volume = value/100
 
 	# Update music player volume
-	music_player.set_volume(global.music.volume)
+	#music_player.set_volume(global.music.volume)
 
 
 # -- DEBUG --

@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/snow-patch-large.png-210c8688d2515e1d29d82a46fe797dfc.stex"
 
+[deps]
+
+source_md5="54a9008f4ecd3206c86d18a69640bef7"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

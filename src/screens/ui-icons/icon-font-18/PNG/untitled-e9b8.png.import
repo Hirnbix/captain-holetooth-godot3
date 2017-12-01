@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/untitled-e9b8.png-f57e4f29ae4470fe3442c3dcc794f097.stex"
 
+[deps]
+
+source_md5="d65ff9efe57fc892c26569b4d3a74fad"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

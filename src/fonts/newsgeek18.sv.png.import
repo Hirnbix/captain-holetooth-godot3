@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/newsgeek18.sv.png-c6b00940dacacf3e6076d41d25d12deb.stex"
 
+[deps]
+
+source_md5="bc3908eafb20478ddb5c92e75d03eadb"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/berry12.sv.png-70ee85358777d1590dc1b50fe101d128.stex"
 
+[deps]
+
+source_md5="e957aefe53d4f841d1669be5dc854ed2"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

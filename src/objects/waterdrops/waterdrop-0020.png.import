@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/waterdrop-0020.png-ac334cd0fea2118e4d6b478b7c961bc4.stex"
 
+[deps]
+
+source_md5="b34bd180e37e7acbfe24c18f62655526"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

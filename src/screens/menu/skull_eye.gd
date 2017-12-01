@@ -13,7 +13,7 @@ var mode = MODE_DIRECT
 
 
 func _process(delta):
-	var mpos = get_viewport().get_mouse_pos()
+	var mpos = get_viewport().get_mouse_position()
 	
 	if (mode == MODE_DIRECT):
 		look_at(mpos)

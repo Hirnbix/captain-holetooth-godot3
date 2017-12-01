@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/splashscreen_ship_scn1.png-17f8757547c7e3a2e7a58d34af2e7c62.stex"
 
+[deps]
+
+source_md5="7614c07a599e34c9f1be63adbdfdba65"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

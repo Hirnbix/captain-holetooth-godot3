@@ -1,6 +1,6 @@
 [gd_resource type="BitmapFont" load_steps=1 format=2]
 
-[ext_resource path="res://src/fonts/berry25.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://src/fonts/berry25.font" type="BitmapFont" id=1]
 
 [resource]
 

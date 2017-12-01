@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/enemy_shot.png-8109cf600772e325e7bb9a544a63dafb.stex"
 
+[deps]
+
+source_md5="4c7dfb859b08f9e025d6860ad303547a"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

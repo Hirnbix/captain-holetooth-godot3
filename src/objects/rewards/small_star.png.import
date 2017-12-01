@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/small_star.png-f7aff839159922092b4d70002c7fd334.stex"
 
+[deps]
+
+source_md5="ab86b170e9545574d70ca512c3b2569c"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

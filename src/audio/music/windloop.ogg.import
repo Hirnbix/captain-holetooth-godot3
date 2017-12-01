@@ -4,6 +4,11 @@ importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
 path="res://.import/windloop.ogg-d5762fb636e9156bb7afbdb2f0042314.oggstr"
 
+[deps]
+
+source_md5="0462fb5358cde3c9af84ca24dd24a195"
+
 [params]
 
 loop=true
+loop_offset=0

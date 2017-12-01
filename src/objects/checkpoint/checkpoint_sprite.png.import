@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/checkpoint_sprite.png-a1b3a85f3ae8520a7e815d582ab0dee9.stex"
 
+[deps]
+
+source_md5="1e2d4a011c982d9e2e9ef7178dddea71"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

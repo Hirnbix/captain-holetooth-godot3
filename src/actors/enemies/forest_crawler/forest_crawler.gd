@@ -47,7 +47,7 @@ func _integrate_forces(s):
 			var dp = s.get_contact_local_normal(i)
 
 			if (cc):
-				if (cc extends bullet_class and not cc.disabled):
+				#if (cc extends bullet_class and not cc.disabled):
 					set_mode(MODE_RIGID)
 					state = STATE_DYING
 					#lv = s.get_contact_local_normal(i)*400

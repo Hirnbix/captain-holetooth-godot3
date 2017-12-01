@@ -3,7 +3,7 @@
 [ext_resource path="res://src/levels/minigames/yankandy/pin.gd" type="Script" id=1]
 [ext_resource path="res://src/audio/sfx/sfx.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/minigames/yankandy/pin.png" type="Texture" id=3]
-[ext_resource path="res://src/fonts/newsgeek16.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://src/fonts/newsgeek16.font" type="BitmapFont" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 

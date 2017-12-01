@@ -215,7 +215,7 @@ func _integrate_forces(s):
 		bi.set_linear_velocity(Vector2(800.0*CURR_DIR.x, -80))
 		get_node("sprite/smoke").set_emitting(true)
 		get_node("sfx").play("schwuit")
-		PS2D.body_add_collision_exception(bi.get_rid(), get_rid()) # Make bullet and this not collide
+		#PS2D.body_add_collision_exception(bi.get_rid(), get_rid()) # Make bullet and this not collide
 	else:
 		shoot_time += step
 	# Check siding direction

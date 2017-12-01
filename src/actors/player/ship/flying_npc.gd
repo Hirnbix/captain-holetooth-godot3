@@ -49,8 +49,8 @@ func destroy(other):
 	destroyed = true
 	
 	# If the flying NPC hit the player ship, reset bonus scores
-	if(reset_bonus && other extends ship_type):
-		game.reset_bonus_score()
+	#if (reset_bonus && other extends ship_type):
+	#	game.reset_bonus_score()
 	
 	# Create an explosion sound
 	if(destroy_sound == "explode"):

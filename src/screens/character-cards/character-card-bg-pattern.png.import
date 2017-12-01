@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/character-card-bg-pattern.png-06ada6d4bfaf44a24681259a6145a434.stex"
 
+[deps]
+
+source_md5="123feb4532f33f09dc9c905fb21a3608"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

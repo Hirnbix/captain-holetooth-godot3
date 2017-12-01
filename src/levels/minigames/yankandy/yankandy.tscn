@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/levels/minigames/yankandy/yankandy.gd" type="Script" id=1]
 [ext_resource path="res://src/screens/hud/mobile_ui_yankandy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/fonts/berry8.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://src/fonts/berry8.font" type="BitmapFont" id=3]
 [ext_resource path="res://src/screens/ui-icons/icon-font-18/PNG/untitled-e945.png" type="Texture" id=4]
 [ext_resource path="res://src/levels/minigames/yankandy/ball_script.gd" type="Script" id=5]
 [ext_resource path="res://src/levels/minigames/yankandy/sprite_candyball.png" type="Texture" id=6]

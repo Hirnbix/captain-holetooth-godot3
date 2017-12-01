@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/snow-patch-pile-medium.png-c84fec19096f1c2d35db1ce08652babe.stex"
 
+[deps]
+
+source_md5="58461a766ee44b64bbe64a09fdc4a287"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0

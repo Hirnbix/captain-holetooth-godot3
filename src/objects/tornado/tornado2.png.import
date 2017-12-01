@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path="res://.import/tornado2.png-9a63e7c823a85d7ee4b004c9f3d8483b.stex"
 
+[deps]
+
+source_md5="1344bb1a7a95ef32a79245385f1f9878"
+
 [params]
 
 compress/mode=0
@@ -21,3 +25,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=true
+svg/scale=1.0
