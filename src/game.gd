@@ -66,21 +66,21 @@ func load_game():
 	high_score = load_key("high_score", 0)
 	opened_scenes = load_key("opened_scenes", [])
 
-func save_game():
-	var save = File.new()
-	save.open(SAVE, File.WRITE)
-	save.store_string(db.to_json())
-	print("Game saved to " + SAVE)
+#func save_game():
+#	var save = File.new()
+#	save.open(SAVE, File.WRITE)
+#	save.store_string(db.to_json())
+#	print("Game saved to " + SAVE)
 	
-func remove_save():
-	var save = File.new()
-	save.open(SAVE, File.WRITE)
-	save.store_string("")
+#func remove_save():
+#	var save = File.new()
+#	save.open(SAVE, File.WRITE)
+#	save.store_string("")
 	
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		save_game()
-		get_tree().quit()
+#func _notification(what):
+#	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+#		save_game()
+#		get_tree().quit()
 		
 		
 func collect_item():

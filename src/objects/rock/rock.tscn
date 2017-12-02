@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/objects/rock/rock.png" type="Texture" id=1]
 
@@ -10,11 +10,7 @@ extents = Vector2( 7.71029, 8.25975 )
 [node name="rock" type="RigidBody2D"]
 
 position = Vector2( 79.178, 72.1389 )
-scale = Vector2( 0.8, 0.8 )
 input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 3, 0, 0, 3, 19.7836, 3.86592 )
-shapes/0/trigger = false
 collision_layer = 1
 collision_mask = 3
 mode = 0
@@ -29,9 +25,9 @@ contact_monitor = false
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
 angular_velocity = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+angular_damp = -1.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -46,5 +42,5 @@ texture = ExtResource( 1 )
 position = Vector2( 19.7836, 3.86592 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
+
+

@@ -1,4 +1,4 @@
-extends TextureFrame
+extends TextureRect
 
 # Level path to the scene we are switching to
 var level_path = "res://src/levels/forest/forest.tscn"

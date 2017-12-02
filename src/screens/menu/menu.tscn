@@ -91,26 +91,26 @@ tracks/4/keys = {
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 0.4, 0.4 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../character-cards:rect/pos")
+tracks/5/path = NodePath("../character-cards/character-cards-button:rect_position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/keys = {
-"times": PoolRealArray( 1.15, 1.35, 1.4, 1.45, 1.55, 1.65, 1.75, 1.8 ),
-"transitions": PoolRealArray( 0.25, 0.25, 4, 4, 1, 1, 0.25, 0.25 ),
+"times": PoolRealArray( 0, 0.66, 0.69, 0.72 ),
+"transitions": PoolRealArray( 1, 4, 4, 1 ),
 "update": 0,
-"values": [ Vector2( 168, -136 ), Vector2( 168, 136 ), Vector2( 168, 140 ), Vector2( 168, 144 ), Vector2( 168, 136 ), Vector2( 168, 144 ), Vector2( 168, 141 ), Vector2( 168, 144 ) ]
+"values": [ Vector2( 44, 10 ), Vector2( 44, 320 ), Vector2( 44, 310 ), Vector2( 44, 320 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../character-cards:rect_rotation")
+tracks/6/path = NodePath("../character-cards/character-cards-button:rect_rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+"times": PoolRealArray( 0, 0.66, 0.69, 0.72 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [  ]
+"values": [ 0.0, 0.0, 4.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -238,7 +238,7 @@ animations_path = NodePath("art/anims")
 [node name="gametitle" type="Sprite" parent="art"]
 
 editor/display_folded = true
-position = Vector2( 359, -90 )
+position = Vector2( 359, 100 )
 z = 1
 texture = ExtResource( 2 )
 region_rect = Rect2( 8, 1, 264, 152 )
@@ -253,6 +253,7 @@ region_rect = Rect2( 8, 1, 264, 152 )
 
 [node name="bg" type="Node2D" parent="art"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -266,7 +267,8 @@ texture = ExtResource( 3 )
 
 [node name="splashscreen_schiff" type="Sprite" parent="art"]
 
-position = Vector2( 595.2, 280.4 )
+editor/display_folded = true
+position = Vector2( 150.628, 219.842 )
 scale = Vector2( 0.8, 0.8 )
 z = 3
 texture = ExtResource( 4 )
@@ -277,8 +279,8 @@ __meta__ = {
 [node name="splashscreen_schiff1" type="Sprite" parent="art/splashscreen_schiff"]
 
 self_modulate = Color( 0, 0, 0, 0.326798 )
-position = Vector2( 15.6, 5.45 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 89.5479, 19.6233 )
+scale = Vector2( 0.645008, 0.645008 )
 z = 2
 z_as_relative = false
 texture = ExtResource( 4 )
@@ -321,8 +323,8 @@ autoplay = "gametitle_animations"
 
 [node name="keyvisual_lochzahn" type="Sprite" parent="art"]
 
+editor/display_folded = true
 position = Vector2( 239, 146 )
-scale = Vector2( 8, 8 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
@@ -380,10 +382,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -312.0
-margin_top = -160.0
-margin_right = -492.0
-margin_bottom = -289.0
+margin_left = 288.0
+margin_top = 182.0
+margin_right = 468.0
+margin_bottom = 264.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -398,10 +400,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 583.0
-margin_top = 203.0
-margin_right = 763.0
-margin_bottom = 246.0
+margin_top = 1.0
+margin_right = 180.0
+margin_bottom = 44.0
 rect_min_size = Vector2( 180, 43 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -422,10 +423,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 583.0
-margin_top = 250.0
-margin_right = 733.0
-margin_bottom = 285.0
+margin_top = 48.0
+margin_right = 150.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 150, 35 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1090,11 +1090,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -56.0
-margin_top = 49.0
-margin_right = -120.0
-margin_bottom = -33.0
-rect_pivot_offset = Vector2( 0, 0 )
+margin_left = 20.0
+margin_top = 232.0
+margin_right = 84.0
+margin_bottom = 344.0
+rect_pivot_offset = Vector2( 30.7894, 6.25153 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://src/levels/forest/forest.gd" type="Script" id=1]
 [ext_resource path="res://src/actors/yan/yan.tscn" type="PackedScene" id=2]
@@ -12,24 +12,22 @@
 [ext_resource path="res://src/objects/platforms/moving_platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/objects/platforms/one_way_platform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/objects/platforms/small_one_way_platform.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/objects/birds/birds.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/objects/fireflies/fireflies.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/objects/rock/rock.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/objects/rewards/reward.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/actors/enemies/soap_bubble/soap_bubble.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/objects/rewards/reward_groups/reward_group_2x_2y.tscn" type="PackedScene" id=18]
-[ext_resource path="res://src/actors/enemies/forest_crawler/forest_crawler.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/scene_teleporter.tscn" type="PackedScene" id=20]
-[ext_resource path="res://src/audio/music_player/music_player.tscn" type="PackedScene" id=21]
-[ext_resource path="res://src/audio/music/Percy Wenrich - Frog Legs Ragtime Era Favorites - 02 - The Smiler (1907, Zonophone Concert Band).ogg" type="AudioStream" id=22]
-[ext_resource path="res://src/objects/snow/simple_snow.tscn" type="PackedScene" id=23]
-[ext_resource path="res://src/objects/snow_patches/snow_patch.tscn" type="PackedScene" id=24]
-[ext_resource path="res://src/objects/snow_patches/snow-patch-large.png" type="Texture" id=25]
-[ext_resource path="res://src/objects/snow_patches/snow-patch-medium.png" type="Texture" id=26]
-[ext_resource path="res://src/objects/snow_patches/snow-patch-small.png" type="Texture" id=27]
-[ext_resource path="res://src/objects/snow_patches/snow-patch-pile-medium.png" type="Texture" id=28]
-[ext_resource path="res://src/objects/signpost/signpost.tscn" type="PackedScene" id=29]
-[ext_resource path="res://src/screens/hud/hud.tscn" type="PackedScene" id=30]
+[ext_resource path="res://src/objects/fireflies/fireflies.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/objects/rock/rock.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/objects/rewards/reward.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/actors/enemies/soap_bubble/soap_bubble.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/objects/rewards/reward_groups/reward_group_2x_2y.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/actors/enemies/forest_crawler/forest_crawler.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/scene_teleporter.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/audio/music_player/music_player.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/audio/music/Percy Wenrich - Frog Legs Ragtime Era Favorites - 02 - The Smiler (1907, Zonophone Concert Band).ogg" type="AudioStream" id=21]
+[ext_resource path="res://src/objects/snow_patches/snow_patch.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/objects/snow_patches/snow-patch-large.png" type="Texture" id=23]
+[ext_resource path="res://src/objects/snow_patches/snow-patch-medium.png" type="Texture" id=24]
+[ext_resource path="res://src/objects/snow_patches/snow-patch-small.png" type="Texture" id=25]
+[ext_resource path="res://src/objects/snow_patches/snow-patch-pile-medium.png" type="Texture" id=26]
+[ext_resource path="res://src/objects/signpost/signpost.tscn" type="PackedScene" id=27]
+[ext_resource path="res://src/screens/hud/hud.tscn" type="PackedScene" id=28]
 
 [sub_resource type="GDScript" id=1]
 
@@ -86,41 +84,20 @@ script = ExtResource( 1 )
 editor/display_folded = true
 position = Vector2( 3883, 2270 )
 z = 0
-audio_bus_override = false
-audio_bus_name = "Master"
 select_dialogbox = NodePath("../hud/dialogbox")
 
 [node name="Sprite" parent="Yan"]
 
-frame = 0
+frame = 3
 
 [node name="Particles2D" parent="Yan"]
 
-emitting = true
-amount = 8
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = null
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 
 position = Vector2( 104, 1056 )
 z_as_relative = false
-linear_damp = -1.0
-angular_damp = -1.0
 
 [node name="world" type="Node2D" parent="."]
 
@@ -467,601 +444,565 @@ z = -1
 position = Vector2( 4016, 932 )
 z = -1
 
-[node name="birds" parent="world/tile_map" instance=ExtResource( 13 )]
-
-position = Vector2( 24.7671, 249.674 )
-emitting = true
-amount = 8
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = null
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-
 [node name="fireflies" type="Node2D" parent="world/tile_map"]
 
 editor/display_folded = true
 
-[node name="fireflies" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 4890.88, 2460.24 )
 
-[node name="fireflies1" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies1" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 6130, 3047 )
 scale = Vector2( 0.3125, 0.312502 )
 
-[node name="fireflies3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5399.05, 2723.14 )
 scale = Vector2( 1.71875, 1.71875 )
 
-[node name="fireflies4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 6325, 2602 )
 scale = Vector2( 1.71875, 1.71875 )
 
-[node name="fireflies5" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies5" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5498.57, 2559.19 )
 scale = Vector2( 1.71875, 1.71875 )
 
-[node name="fireflies6" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies6" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 6027.02, 2258.05 )
 scale = Vector2( 1.09375, 1.09375 )
 
-[node name="fireflies 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 3961, 2670.31 )
 scale = Vector2( 1.40625, 1.20129 )
 
-[node name="fireflies1 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies1 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5586, 3083.56 )
 scale = Vector2( 0.3125, 0.300324 )
 
-[node name="fireflies2 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies2 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5932.79, 1869.04 )
 scale = Vector2( 1.71875, 1.65178 )
 
-[node name="fireflies3 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies3 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5561, 3097.97 )
 scale = Vector2( 1.71875, 1.65178 )
 
-[node name="fireflies4 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies4 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5781, 2655.89 )
 scale = Vector2( 1.71875, 1.65178 )
 
-[node name="fireflies5 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies5 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5841, 2598.23 )
 scale = Vector2( 1.71875, 1.65178 )
 
-[node name="fireflies6 2" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies6 2" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5759.25, 2649.62 )
 scale = Vector2( 1.09375, 1.05113 )
 
-[node name="fireflies 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 3877.41, 2220.43 )
 
-[node name="fireflies1 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies1 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5489, 2660 )
 
-[node name="fireflies2 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies2 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 4984, 2545 )
 
-[node name="fireflies3 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies3 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5189.66, 2334.34 )
 
-[node name="fireflies4 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies4 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5684, 2215 )
 
-[node name="fireflies5 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies5 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5744, 2155 )
 
-[node name="fireflies6 3" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies6 3" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5704, 2205 )
 
-[node name="fireflies 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 4205.18, 2475.62 )
 scale = Vector2( 1.40625, 0.682822 )
 
-[node name="fireflies1 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies1 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5830.18, 2710.51 )
 scale = Vector2( 0.3125, 0.170706 )
 
-[node name="fireflies2 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies2 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5360.25, 2726.19 )
 scale = Vector2( 0.1, 0.128029 )
 
-[node name="fireflies3 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies3 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 5805.18, 2718.71 )
 scale = Vector2( 1.71875, 0.938882 )
 
-[node name="fireflies4 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies4 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 6025.18, 2467.43 )
 scale = Vector2( 1.71875, 0.938882 )
 
-[node name="fireflies5 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies5 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 6085.18, 2434.65 )
 scale = Vector2( 1.71875, 0.938882 )
 
-[node name="fireflies6 4" parent="world/tile_map/fireflies" instance=ExtResource( 14 )]
+[node name="fireflies6 4" parent="world/tile_map/fireflies" instance=ExtResource( 13 )]
 
 position = Vector2( 6045.18, 2461.96 )
 scale = Vector2( 1.09375, 0.59747 )
 
 [node name="interactables" type="Node2D" parent="world"]
 
-editor/display_folded = true
-
-[node name="rock" parent="world/interactables" instance=ExtResource( 15 )]
+[node name="rock" parent="world/interactables" instance=ExtResource( 14 )]
 
 position = Vector2( 2381.47, 1263.25 )
-linear_damp = -1.0
-angular_damp = -1.0
 
-[node name="rock4" parent="world/interactables" instance=ExtResource( 15 )]
+[node name="rock4" parent="world/interactables" instance=ExtResource( 14 )]
 
 position = Vector2( 5685.6, 2290.6 )
-linear_damp = -1.0
-angular_damp = -1.0
 
-[node name="rock2" parent="world/interactables" instance=ExtResource( 15 )]
+[node name="rock2" parent="world/interactables" instance=ExtResource( 14 )]
 
 position = Vector2( 2902.92, 1519.33 )
-linear_damp = -1.0
-angular_damp = -1.0
 
-[node name="rock3" parent="world/interactables" instance=ExtResource( 15 )]
+[node name="rock3" parent="world/interactables" instance=ExtResource( 14 )]
 
 position = Vector2( 2769.6, 753.6 )
-linear_damp = -1.0
-angular_damp = -1.0
 
-[node name="rock1" parent="world/interactables" instance=ExtResource( 15 )]
+[node name="rock1" parent="world/interactables" instance=ExtResource( 14 )]
 
 editor/display_folded = true
 position = Vector2( 2815.6, 1528.28 )
-linear_damp = -1.0
-angular_damp = -1.0
 
 [node name="rewards" type="Node2D" parent="world/interactables"]
 
-editor/display_folded = true
-
-[node name="reward" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3928.66, 1578.46 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward27" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward27" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4063.66, 1319.37 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward28" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward28" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3552, 1312 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward29" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward29" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3092, 1252 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward42" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward42" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1502, 602 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1552, 1202 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward30" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward30" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3122, 1282 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward42 2" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward42 2" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1532, 632 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward425" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward425" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 482, 1312 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward426" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward426" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 482, 1272 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward427" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward427" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 482, 1232 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward428" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward428" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2052, 1212 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward429" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward429" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1902, 1092 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward430" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward430" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1972, 992 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward431" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward431" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2012, 862 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward432" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward432" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2012, 952 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward433" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward433" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2012, 902 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward434" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward434" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2032, 762 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward435" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward435" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1692, 762 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward436" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward436" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1302, 892 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward437" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward437" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1332, 862 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward438" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward438" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1362, 832 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward439" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward439" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1392, 802 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward440" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward440" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1392, 862 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward441" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward441" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1332, 802 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward442" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward442" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2112, 742 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward443" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward443" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2282, 942 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward444" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward444" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2282, 942 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward423" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward423" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1582, 1232 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward31" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward31" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3152, 1312 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward32" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward32" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3152, 1312 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward42 3" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward42 3" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1562, 662 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward424" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward424" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1612, 1262 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward33" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward33" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2452, 1322 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 1762, 1312 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2712, 1442 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward35" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward35" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 2912, 1372 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3132, 1672 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3162, 1702 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3192, 1732 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward39" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward39" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3222, 1762 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3222, 1762 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward8" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward8" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 5470, 2269 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward9" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward9" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 5599, 2142 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward2" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward2" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3796.18, 1721.06 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward10" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward10" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3612, 2442 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward11" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward11" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3612, 2492 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward12" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward12" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3612, 2542 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward13" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward13" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3612, 2592 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward14" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward14" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4002, 2662 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward15" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward15" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4002, 2712 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward16" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward16" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4002, 2762 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward17" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward17" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4132, 3142 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward18" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward18" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4162, 3172 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward19" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward19" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4192, 3202 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward20" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward20" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4222, 3232 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward21" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward21" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4252, 3262 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward22" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward22" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4282, 3292 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward23" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward23" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4312, 3322 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward24" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward24" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4342, 3352 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward25" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward25" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4372, 3382 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward26" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward26" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4372, 3382 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward3" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward3" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4328, 2552 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward4" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward4" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4288, 2552 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward5" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward5" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4016, 2272 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward6" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward6" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4040, 2272 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward7" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward7" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 4032, 2256 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward1" parent="world/interactables/rewards" instance=ExtResource( 16 )]
+[node name="reward1" parent="world/interactables/rewards" instance=ExtResource( 15 )]
 
 position = Vector2( 3886.25, 1659.74 )
 audio_bus_override = false
@@ -1079,97 +1020,97 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3698.38, 1855.61 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3698.38, 1815.61 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward35" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward35" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3658.38, 1815.61 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward39" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward39" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4660, 1950 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4750, 2080 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4150, 1960 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward42" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward42" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4180, 1930 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4160, 2780 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4130, 2810 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4190, 2810 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 4160, 2840 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward47" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward47" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3680, 1890 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3720, 1890 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3640, 1890 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3864, 1904 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward33" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 16 )]
+[node name="reward33" parent="world/interactables/rewards/reward_group_2x3" instance=ExtResource( 15 )]
 
 position = Vector2( 3659.42, 1856.34 )
 audio_bus_override = false
@@ -1190,97 +1131,97 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward33" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward33" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 131.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward39" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward39" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 291.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 291.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward42" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward42" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 331.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 131.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward47" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward47" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 91.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward48" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 16 )]
+[node name="reward48" parent="world/interactables/rewards/reward_group_ pyramid2" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 42.34 )
 audio_bus_override = false
@@ -1301,67 +1242,67 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 291.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid3" instance=ExtResource( 15 )]
 
 position = Vector2( 131.21, 122.34 )
 audio_bus_override = false
@@ -1382,67 +1323,67 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 291.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid4" instance=ExtResource( 15 )]
 
 position = Vector2( 131.21, 122.34 )
 audio_bus_override = false
@@ -1463,67 +1404,67 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 291.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid6" instance=ExtResource( 15 )]
 
 position = Vector2( 131.21, 122.34 )
 audio_bus_override = false
@@ -1544,67 +1485,67 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 162.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 291.21, 122.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 251.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 211.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 171.21, 82.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid5" instance=ExtResource( 15 )]
 
 position = Vector2( 131.21, 122.34 )
 audio_bus_override = false
@@ -1625,91 +1566,91 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward3 2" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3701.21, 1852.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward36" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3741.21, 1852.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward37" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3741.21, 1812.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward34" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3701.21, 1812.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward33" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward33" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3661.21, 1852.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward38" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3781.21, 1852.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward39" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward39" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3821.21, 1852.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward40" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3781.21, 1812.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward41" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3821.21, 1812.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward43" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3781.21, 1772.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward44" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3741.21, 1772.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward45" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3701.21, 1772.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward46" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3661.21, 1812.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward48" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 16 )]
+[node name="reward48" parent="world/interactables/rewards/reward_group_ pyramid1" instance=ExtResource( 15 )]
 
 position = Vector2( 3741.21, 1732.34 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="soap_bubble" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 352, 1040 )
 audio_bus_override = false
@@ -1717,7 +1658,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble25" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble25" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 567.612, 868.837 )
 audio_bus_override = false
@@ -1725,7 +1666,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble1" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble1" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 902.64, 1152.78 )
 audio_bus_override = false
@@ -1733,7 +1674,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble4" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble4" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 476.723, 1132.22 )
 audio_bus_override = false
@@ -1741,7 +1682,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble2" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble2" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 417.249, 1026.61 )
 audio_bus_override = false
@@ -1749,7 +1690,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble20" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble20" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 927.249, 926.61 )
 audio_bus_override = false
@@ -1757,7 +1698,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble6" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble6" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 3812, 1172 )
 audio_bus_override = false
@@ -1765,7 +1706,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble7" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble7" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 3222, 972 )
 audio_bus_override = false
@@ -1773,7 +1714,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble8" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble8" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 2942, 662 )
 audio_bus_override = false
@@ -1781,7 +1722,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble9" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble9" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 3102, 1072 )
 audio_bus_override = false
@@ -1789,7 +1730,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble10" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble10" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 2602, 792 )
 audio_bus_override = false
@@ -1797,7 +1738,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble11" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble11" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4502, 972 )
 audio_bus_override = false
@@ -1805,7 +1746,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble12" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble12" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4079, 2209 )
 audio_bus_override = false
@@ -1813,7 +1754,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble21" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble21" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4242, 2282 )
 audio_bus_override = false
@@ -1821,7 +1762,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble22" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble22" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4292, 2212 )
 audio_bus_override = false
@@ -1829,7 +1770,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble23" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble23" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4382, 1882 )
 audio_bus_override = false
@@ -1837,7 +1778,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble24" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble24" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4302, 2382 )
 audio_bus_override = false
@@ -1845,7 +1786,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble13" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble13" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5632, 2602 )
 audio_bus_override = false
@@ -1853,7 +1794,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble26" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble26" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5025.91, 2561 )
 audio_bus_override = false
@@ -1861,7 +1802,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble27" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble27" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5081.31, 2603.11 )
 audio_bus_override = false
@@ -1869,7 +1810,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble28" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble28" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4926.18, 2563.22 )
 audio_bus_override = false
@@ -1877,7 +1818,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble29" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble29" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5059.15, 2493.41 )
 audio_bus_override = false
@@ -1885,7 +1826,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble30" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble30" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4969.4, 2492.3 )
 audio_bus_override = false
@@ -1893,7 +1834,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble31" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble31" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4969.4, 2492.3 )
 audio_bus_override = false
@@ -1901,7 +1842,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble14" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble14" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5542, 2812 )
 audio_bus_override = false
@@ -1909,7 +1850,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble15" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble15" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5262, 2322 )
 audio_bus_override = false
@@ -1917,7 +1858,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble16" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble16" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5522, 2172 )
 audio_bus_override = false
@@ -1925,7 +1866,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble32" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble32" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 6000.67, 1637.93 )
 audio_bus_override = false
@@ -1933,7 +1874,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble33" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble33" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5878.79, 1606.9 )
 audio_bus_override = false
@@ -1941,7 +1882,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble34" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble34" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5914.24, 1641.25 )
 audio_bus_override = false
@@ -1949,7 +1890,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble35" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble35" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5943.05, 1600.25 )
 audio_bus_override = false
@@ -1957,7 +1898,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble36" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble36" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 5802.33, 1626.85 )
 audio_bus_override = false
@@ -1965,7 +1906,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble17" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble17" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4822, 3452 )
 audio_bus_override = false
@@ -1973,7 +1914,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble18" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble18" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4072, 3022 )
 audio_bus_override = false
@@ -1981,7 +1922,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble19" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble19" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 4132, 3082 )
 audio_bus_override = false
@@ -1989,7 +1930,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble3" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble3" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 1683.11, 607.906 )
 audio_bus_override = false
@@ -1997,7 +1938,7 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="soap_bubble5" parent="world/interactables/rewards" instance=ExtResource( 17 )]
+[node name="soap_bubble5" parent="world/interactables/rewards" instance=ExtResource( 16 )]
 
 position = Vector2( 780.01, 396.936 )
 audio_bus_override = false
@@ -2005,31 +1946,31 @@ audio_bus_name = "Master"
 destroy_sound = "none"
 reset_bonus = true
 
-[node name="reward_group_2x4" parent="world/interactables/rewards" instance=ExtResource( 18 )]
+[node name="reward_group_2x4" parent="world/interactables/rewards" instance=ExtResource( 17 )]
 
 position = Vector2( 80, 460 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward_group_2x5" parent="world/interactables/rewards" instance=ExtResource( 18 )]
+[node name="reward_group_2x5" parent="world/interactables/rewards" instance=ExtResource( 17 )]
 
 position = Vector2( 192, 992 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward_group_2x6" parent="world/interactables/rewards" instance=ExtResource( 18 )]
+[node name="reward_group_2x6" parent="world/interactables/rewards" instance=ExtResource( 17 )]
 
 position = Vector2( 682, 892 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward_group_2x7" parent="world/interactables/rewards" instance=ExtResource( 18 )]
+[node name="reward_group_2x7" parent="world/interactables/rewards" instance=ExtResource( 17 )]
 
 position = Vector2( 752, 822 )
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="reward_group_2x8" parent="world/interactables/rewards" instance=ExtResource( 18 )]
+[node name="reward_group_2x8" parent="world/interactables/rewards" instance=ExtResource( 17 )]
 
 position = Vector2( 962, 322 )
 audio_bus_override = false
@@ -2041,7 +1982,7 @@ audio_bus_name = "Master"
 
 [node name="enemy 5" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 834.664, 1309.6 )
 linear_damp = -1.0
@@ -2049,7 +1990,7 @@ angular_damp = -1.0
 
 [node name="enemy 6" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 707.665, 1225.05 )
 linear_damp = -1.0
@@ -2057,7 +1998,7 @@ angular_damp = -1.0
 
 [node name="enemy 7" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 1125.21, 1053.06 )
 linear_damp = -1.0
@@ -2065,7 +2006,7 @@ angular_damp = -1.0
 
 [node name="enemy 8" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 1292.11, 1059.24 )
 linear_damp = -1.0
@@ -2073,7 +2014,7 @@ angular_damp = -1.0
 
 [node name="enemy 9" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 1602, 952 )
 linear_damp = -1.0
@@ -2081,24 +2022,15 @@ angular_damp = -1.0
 
 [node name="enemy 10" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 2586.9, 939.059 )
 linear_damp = -1.0
 angular_damp = -1.0
 
-[node name="enemy 11" parent="world/interactables/enemies" groups=[
-"enemies",
-] instance=ExtResource( 19 )]
-
-position = Vector2( 703.5, 491.482 )
-scale = Vector2( 0.734366, 0.671311 )
-linear_damp = -1.0
-angular_damp = -1.0
-
 [node name="enemy 12" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 1162, 492 )
 linear_damp = -1.0
@@ -2106,7 +2038,7 @@ angular_damp = -1.0
 
 [node name="enemy 14" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 3392, 1392 )
 linear_damp = -1.0
@@ -2114,7 +2046,7 @@ angular_damp = -1.0
 
 [node name="enemy 15" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 2406.63, 815.115 )
 linear_damp = -1.0
@@ -2122,7 +2054,7 @@ angular_damp = -1.0
 
 [node name="enemy15" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 3710.72, 1394.25 )
 linear_damp = -1.0
@@ -2130,7 +2062,7 @@ angular_damp = -1.0
 
 [node name="enemy16" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 4608, 1912 )
 linear_damp = -1.0
@@ -2138,7 +2070,7 @@ angular_damp = -1.0
 
 [node name="enemy17" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 4072, 1904 )
 linear_damp = -1.0
@@ -2146,7 +2078,7 @@ angular_damp = -1.0
 
 [node name="enemy19" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 3874.77, 2679.62 )
 linear_damp = -1.0
@@ -2154,13 +2086,13 @@ angular_damp = -1.0
 
 [node name="enemy18" parent="world/interactables/enemies" groups=[
 "enemies",
-] instance=ExtResource( 19 )]
+] instance=ExtResource( 18 )]
 
 position = Vector2( 4242, 2552 )
 linear_damp = -1.0
 angular_damp = -1.0
 
-[node name="scene_teleporter" parent="world" instance=ExtResource( 20 )]
+[node name="scene_teleporter" parent="world" instance=ExtResource( 19 )]
 
 editor/display_folded = true
 position = Vector2( 5000.11, 1060.48 )
@@ -2179,7 +2111,7 @@ rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 
-[node name="scene_teleporter1" parent="world" instance=ExtResource( 20 )]
+[node name="scene_teleporter1" parent="world" instance=ExtResource( 19 )]
 
 editor/display_folded = true
 position = Vector2( 6062.02, 1060 )
@@ -2204,32 +2136,9 @@ mouse_filter = 2
 position = Vector2( 120, 1060 )
 scale = Vector2( 4.99998, 3.59373 )
 
-[node name="music_player" parent="." instance=ExtResource( 21 )]
+[node name="music_player" parent="." instance=ExtResource( 20 )]
 
-stream = ExtResource( 22 )
-
-[node name="simple_snow" parent="." instance=ExtResource( 23 )]
-
-position = Vector2( 5523.03, 635.042 )
-scale = Vector2( 5.02561, 1.58224 )
-emitting = true
-amount = 8
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = null
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
+stream = ExtResource( 21 )
 
 [node name="snow_patches" type="Node2D" parent="."]
 
@@ -2237,75 +2146,75 @@ editor/display_folded = true
 position = Vector2( 5168.79, 461.355 )
 z = -1
 
-[node name="snow_patch" parent="snow_patches" instance=ExtResource( 24 )]
+[node name="snow_patch" parent="snow_patches" instance=ExtResource( 22 )]
 
 [node name="snow_patch_large3" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 821.674, 700.558 )
-texture = ExtResource( 25 )
+texture = ExtResource( 23 )
 
 [node name="snow_patch_large2" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 744.854, 960.5 )
-texture = ExtResource( 25 )
+texture = ExtResource( 23 )
 flip_h = true
 
 [node name="snow_patch_large1" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 834.845, 701.755 )
-texture = ExtResource( 25 )
+texture = ExtResource( 23 )
 
 [node name="snow_patch_medium" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 699.964, 1017.86 )
-texture = ExtResource( 26 )
+texture = ExtResource( 24 )
 
 [node name="snow_patch_small" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 797.901, 696.718 )
-texture = ExtResource( 27 )
+texture = ExtResource( 25 )
 
 [node name="snow_patch_small1" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 488.953, 763.777 )
-texture = ExtResource( 27 )
+texture = ExtResource( 25 )
 flip_h = true
 
 [node name="snow__patch_pile_medium" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 612.366, 823.789 )
-texture = ExtResource( 28 )
+texture = ExtResource( 26 )
 
 [node name="snow__patch_pile_medium1" type="Sprite" parent="snow_patches"]
 
 position = Vector2( 357.903, 699.85 )
-texture = ExtResource( 28 )
+texture = ExtResource( 26 )
 flip_h = true
 
-[node name="signpost" parent="." instance=ExtResource( 29 )]
+[node name="signpost" parent="." instance=ExtResource( 27 )]
 
 position = Vector2( 6190.82, 1717.67 )
 flip_h = true
 
-[node name="signpost1" parent="." instance=ExtResource( 29 )]
+[node name="signpost1" parent="." instance=ExtResource( 27 )]
 
 position = Vector2( 6281.71, 2345.54 )
 flip_h = true
 
-[node name="signpost2" parent="." instance=ExtResource( 29 )]
+[node name="signpost2" parent="." instance=ExtResource( 27 )]
 
 position = Vector2( 4836.19, 3241.49 )
 
-[node name="signpost3" parent="." instance=ExtResource( 29 )]
+[node name="signpost3" parent="." instance=ExtResource( 27 )]
 
 position = Vector2( 4924.55, 1130.11 )
 
-[node name="signpost4" parent="." instance=ExtResource( 29 )]
+[node name="signpost4" parent="." instance=ExtResource( 27 )]
 
 position = Vector2( 4029.55, 1329.74 )
 z = -1
 
-[node name="hud" parent="." instance=ExtResource( 30 )]
+[node name="hud" parent="." instance=ExtResource( 28 )]
 
 [node name="yan_card_unlock" parent="hud"]
 

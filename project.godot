@@ -10,7 +10,9 @@ config_version=3
 
 [application]
 
+config/name="Captain Holetooth"
 run/main_scene="res://src/screens/menu/menu.tscn"
+config/icon="res://game_icon.png"
 icon="res://game_icon.png"
 name="Captain Holetooth"
 name_de="Käpt'n Lochzahn"
@@ -30,7 +32,7 @@ transition="*res://src/transition.tscn"
 [display]
 
 window/size/width=512
-window/size/height=256
+window/size/height=288
 stretch/aspect="keep_height"
 stretch/mode="viewport"
 window/borderless=true

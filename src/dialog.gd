@@ -1,4 +1,4 @@
-extends Patch9Frame # If you're using a different node than this, replace the name with the
+extends Area2D # If you're using a different node than this, replace the name with the
 # corresponding node you're attaching the script to.
 
 # SOLOGUE - a small dialog system, by some nerd called ArcOfDream.

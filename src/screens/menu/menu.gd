@@ -44,7 +44,7 @@ func _ready():
 # Start Game
 func _on_startbutton_pressed():
 	transition.fade_to("res://src/screens/intro/intro.tscn")
-	get_node("sfx").play("click")
+	#get_node("sfx").play("click")
 
 # Options
 func _on_optionsbutton_pressed():
