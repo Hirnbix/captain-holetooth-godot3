@@ -35,11 +35,11 @@ func _input(e):
 		emit_signal("scores_changed")
 		get_tree().reload_current_scene()
 
-func _exit_tree():
-	save_game()
+#func _exit_tree():
+#	save_game()
 
-func save_key(key, value):
-	db[key] = value
+#func save_key(key, value):
+#	db[key] = value
 
 func load_key(key, default=null):
 	if db.has(key):

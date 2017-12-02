@@ -54,7 +54,7 @@ var last_pos = [Vector2(0,0),Vector2(0,0),Vector2(0,0)]
 
 # Array for characters the player has met (to display the character cards in the options later)
 # Captain Holetooth is in there by default
-var characters_met = ["Captain Holetooth"]
+var characters_met = ["Captain Holetooth", "Yan"]
 
 ######################################
 #  Dictionary Character descriptions #
@@ -89,9 +89,9 @@ func manage_inv(inv_action, inv_item):
 # Database       #
 ##################
 
-func _ready():
-	score = database.get_key("score", 0)
+#func _ready():
+#	score = database.get_key("score", 0)
 
-func add_score(value=1):
-	score += value
-	database.set_key("score", score)
+#func add_score(value=1):
+#	score += value
+#	database.set_key("score", score)

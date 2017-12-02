@@ -24,8 +24,8 @@ stream_volume_scale=1.0
 
 [autoload]
 
-database="*res://src/database.gd"
-game="*res://src/game.gd"
+database="res://src/database.gd"
+game="res://src/game.gd"
 global="*res://src/global.gd"
 transition="*res://src/transition.tscn"
 

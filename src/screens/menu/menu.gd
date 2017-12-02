@@ -37,7 +37,7 @@ func _ready():
 	get_node("options_screen/settings/Parental Controls/playtime_settings/playtime_limit").set_text(str(global.playtime_limit_minutes))
 	# Updates locale on scene
 	#update_locale()
-	get_node("menu_buttons/startbutton").grab_focus()
+	get_node("startbutton").grab_focus()
 
 
 # -- BUTTON PRESSES --
@@ -46,11 +46,7 @@ func _on_startbutton_pressed():
 	transition.fade_to("res://src/screens/intro/intro.tscn")
 	#get_node("sfx").play("click")
 
-# Options
-func _on_optionsbutton_pressed():
-	options_screen.show()
-	options_screen.set_process_input(true)
-	get_node("sfx").play("click")
+
 
 # Exit
 func _on_exitbutton_pressed():
@@ -59,10 +55,6 @@ func _on_exitbutton_pressed():
 	get_node("menu_buttons/startbutton").grab_focus()
 	get_node("sfx").play("click")
 	
-# Close Options
-func _on_btn_close_options_pressed():
-	options_screen.hide()
-	get_node("sfx").play("click")
 
 # Change Language to German
 func _on_de_button_pressed():
