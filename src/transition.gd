@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 # Animation player for fading

@@ -1,9 +1,4 @@
-
-extends Control
-
-# Game Title
-export (NodePath) var game_title_path
-onready var game_title = get_node(game_title_path)
+extends Node
 
 # Menu Buttons
 export (NodePath) var menu_buttons_path
@@ -14,12 +9,12 @@ export (NodePath) var options_screen_path
 onready var options_screen = get_node(options_screen_path)
 
 # Music Player
-export (NodePath) var music_player_path
-onready var music_player = get_node(music_player_path)
+#export (NodePath) var music_player_path
+#onready var music_player = get_node(music_player_path)
 
 # Music Volume Slider
-export (NodePath) var music_volume_slider_path
-onready var music_volume_slider = get_node(music_volume_slider_path)
+#export (NodePath) var music_volume_slider_path
+#onready var music_volume_slider = get_node(music_volume_slider_path)
 
 # Animations
 export (NodePath) var animations_path
@@ -32,19 +27,12 @@ var current_locale = TranslationServer.get_locale()
 # -- START --
 func _ready():
 	# Update music player volume the initial music volume stored in global
-	music_volume_slider.set_value(global.music.volume * 100) 
+	#music_volume_slider.set_value(global.music.volume * 100) 
 	# Set playtime limit field
 	get_node("options_screen/settings/Parental Controls/playtime_settings/playtime_limit").set_text(str(global.playtime_limit_minutes))
 	# Updates locale on scene
 	#update_locale()
-	get_node("startbutton").grab_focus()
-
-
-# -- BUTTON PRESSES --
-# Start Game
-func _on_startbutton_pressed():
-	transition.fade_to("res://src/screens/intro/intro.tscn")
-	#get_node("sfx").play("click")
+	#get_node("startbutton").grab_focus()
 
 
 
@@ -55,20 +43,6 @@ func _on_exitbutton_pressed():
 	get_node("menu_buttons/startbutton").grab_focus()
 	get_node("sfx").play("click")
 	
-
-# Change Language to German
-func _on_de_button_pressed():
-	get_node("sfx").play("click")
-	TranslationServer.set_locale("de_DE")
-	get_tree().reload_current_scene()
-
-
-# Change Language to English
-func _on_en_button_pressed():
-	get_node("sfx").play("click")
-	TranslationServer.set_locale("en_GB")
-	get_tree().reload_current_scene()
-
 
  #-- LOCALE / LANGUAGES --
 # Updates all locale on Main Menu according to current_locale selected
@@ -101,9 +75,6 @@ func _on_en_button_pressed():
  #-- MUSIC --
  #Updates global music volume when slider has been changed
 
-func _on_music_volume_value_changed( value ):
-	# Set global music volume
-	global.music.volume = value/100
 
 	# Update music player volume
 	#music_player.set_volume(global.music.volume)
@@ -151,3 +122,6 @@ func _on_charactercardsbutton_pressed():
 
 func _on_candy_skull_button_pressed():
 	animations.connect("finished", animations, "play", ["wigglecandy"])
+
+func _on_Button_pressed():
+	print ("button test") # replace with function body

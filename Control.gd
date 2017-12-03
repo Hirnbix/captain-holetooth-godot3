@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 # class member variables go here, for example:
 # var a = 2
@@ -15,4 +15,5 @@ func _ready():
 #	pass
 
 
-
+func _on_Button_pressed():
+	print("Test") # replace with function body
