@@ -236,8 +236,8 @@ radius = 10.0
 height = 32.0
 
 [node name="player" type="RigidBody2D" groups=[
-"actor",
 "player",
+"actor",
 ]]
 
 input_pickable = false

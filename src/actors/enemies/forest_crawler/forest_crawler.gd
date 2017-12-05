@@ -25,9 +25,9 @@ func _die():
 
 func _pre_explode():
 	# Stay there
-	clear_shapes()
+	#shape_owner_clear_shapes()
 	set_mode(MODE_STATIC)
-	get_node("sfx").play("cork_pop")
+	#get_node("sfx").play("cork_pop")
 
 
 
@@ -53,9 +53,9 @@ func _integrate_forces(s):
 					#lv = s.get_contact_local_normal(i)*400
 					s.set_angular_velocity(sign(dp.x)*33.0)
 					set_friction(1)
-					cc.disable()
-					game.reset_bonus_score()
-					get_node("sfx").play("punch")
+					#cc.disable()
+					#game.reset_bonus_score()
+					#get_node("sfx").play("punch")
 
 					break
 

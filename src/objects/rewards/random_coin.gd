@@ -15,9 +15,3 @@ func _ready():
 	anim.seek(seek, false)
 	sprite.set_texture(tex)
 
-func take():
-	get_node("sfx").play("item_pickup")
-	anim.play("taken")
-	yield(anim, "finished")
-	emit_signal("taken")
-	queue_free()
