@@ -14,41 +14,58 @@ scale = Vector2( 1, 1 )
 
 [node name="left" type="TouchScreenButton" parent="."]
 
+visible = false
 position = Vector2( 0, 232 )
 normal = ExtResource( 1 )
 pressed = null
 bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
 passby_press = false
 action = "ui_left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="."]
 
+visible = false
 position = Vector2( 64, 232 )
 normal = ExtResource( 2 )
 pressed = null
 bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
 passby_press = false
 action = "ui_right"
 visibility_mode = 1
 
 [node name="down" type="TouchScreenButton" parent="."]
 
+visible = false
 position = Vector2( 513, 289 )
-rotation_deg = 180.0
 normal = ExtResource( 3 )
 pressed = null
 bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
 passby_press = false
 action = "ui_down"
 visibility_mode = 1
 
 [node name="release" type="TouchScreenButton" parent="."]
 
+visible = false
 position = Vector2( 288, 224 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
 passby_press = false
 action = "ui_select"
 visibility_mode = 1
+
+

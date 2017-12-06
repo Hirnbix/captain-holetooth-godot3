@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/levels/mountain/art/scn_4_scroll_bg_sky.png" type="Texture" id=1]
 [ext_resource path="res://src/levels/mountain/art/parallax_mountain_back.png" type="Texture" id=2]
@@ -41,10 +41,10 @@ motion_mirroring = Vector2( 800, 0 )
 
 [node name="Sprite" type="Sprite" parent="mount_ 2"]
 
+self_modulate = Color( 0.878906, 0.878906, 0.878906, 0.309965 )
 position = Vector2( 0.814514, 29.0171 )
 texture = ExtResource( 2 )
 centered = false
-self_modulate = Color( 0.878906, 0.878906, 0.878906, 0.309965 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 800, 256 )
 
@@ -105,3 +105,5 @@ texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 800, 256 )
+
+

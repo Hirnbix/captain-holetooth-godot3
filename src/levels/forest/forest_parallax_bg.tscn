@@ -1,17 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/levels/forest/art/scroll_bg_sky.png" type="Texture" id=1]
 [ext_resource path="res://src/levels/forest/art/scroll_bg_cloud_1.png" type="Texture" id=2]
 [ext_resource path="res://src/levels/forest/art/scroll_bg_cloud_2.png" type="Texture" id=3]
 [ext_resource path="res://src/levels/flyhome/scroll_bg_cloud_3.png" type="Texture" id=4]
 [ext_resource path="res://src/levels/forest/art/scroll_bg_fg_1.png" type="Texture" id=5]
-[ext_resource path="res://src/levels/forest/art/smoke_house_spritesheet.png" type="Texture" id=6]
-[ext_resource path="res://src/levels/forest/art/scroll_bg_fg_2.png" type="Texture" id=7]
-
-[sub_resource type="Gradient" id=1]
-
-offsets = PoolRealArray( 0, 0.723608, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+[ext_resource path="res://src/levels/forest/art/scroll_bg_fg_2.png" type="Texture" id=6]
 
 [node name="parallax_bg" type="ParallaxBackground"]
 
@@ -72,7 +66,6 @@ centered = false
 
 [node name="mountains" type="ParallaxLayer" parent="."]
 
-visibility/blend_mode = 1
 position = Vector2( 0, 29 )
 z_as_relative = false
 motion_scale = Vector2( 0.2, 0 )
@@ -89,38 +82,26 @@ region_rect = Rect2( 0, 0, 1024, 256 )
 
 [node name="house_smoke" type="Particles2D" parent="mountains"]
 
-visibility/self_opacity = 0.303091
 show_behind_parent = true
-visibility/blend_mode = 1
 position = Vector2( 491.852, 78.2146 )
-config/amount = 24
-config/lifetime = 6.2
-config/time_scale = 0.95
-config/preprocess = 3.0
-config/half_extents = Vector2( 1, 1 )
-config/texture = ExtResource( 6 )
-config/h_frames = 38
-params/direction = 180.0
-params/spread = 2.0
-params/linear_velocity = 5.0
-params/spin_velocity = 0.1
-params/orbit_velocity = 0.0
-params/gravity_direction = 100.877
-params/gravity_strength = 0.5
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 0.2
-params/final_size = 1.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/gravity_direction = 0.0472045
-randomness/initial_size = 0.01
-randomness/final_size = 1.0
-color/color = Color( 0.484375, 0.455994, 0.455994, 1 )
-color/color_ramp = SubResource( 1 )
+emitting = true
+amount = 8
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = null
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
 
 [node name="Sprite 3" type="Sprite" parent="mountains"]
 
@@ -138,9 +119,10 @@ motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="hills"]
 
-visibility/self_opacity = 0.99
 position = Vector2( 0.02771, 145.086 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 1024, 256 )
+
+

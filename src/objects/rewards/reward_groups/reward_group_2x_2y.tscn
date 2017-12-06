@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://src/objects/rewards/reward.tscn" type="PackedScene" id=1]
 
@@ -9,6 +9,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 __meta__ = {
 "_edit_group_": true
 }
@@ -16,15 +18,25 @@ __meta__ = {
 [node name="reward1" parent="." instance=ExtResource( 1 )]
 
 position = Vector2( 0, 0 )
+audio_bus_override = false
+audio_bus_name = "Master"
 
 [node name="reward2" parent="." instance=ExtResource( 1 )]
 
 position = Vector2( 40, 0 )
+audio_bus_override = false
+audio_bus_name = "Master"
 
 [node name="reward3" parent="." instance=ExtResource( 1 )]
 
 position = Vector2( 0, 40 )
+audio_bus_override = false
+audio_bus_name = "Master"
 
 [node name="reward4" parent="." instance=ExtResource( 1 )]
 
 position = Vector2( 40, 40 )
+audio_bus_override = false
+audio_bus_name = "Master"
+
+

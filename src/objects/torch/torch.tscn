@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/objects/torch/torch.png" type="Texture" id=1]
-[ext_resource path="res://src/objects/torch/feuer.png" type="Texture" id=2]
-[ext_resource path="res://src/objects/torch/light.png" type="Texture" id=3]
-[ext_resource path="res://src/objects/torch/flicker_torch.gd" type="Script" id=4]
-[ext_resource path="res://src/objects/torch/46273__phreaksaccount__fire-small-loop.smp" type="Sample" id=5]
+[ext_resource path="res://src/objects/torch/light.png" type="Texture" id=2]
+[ext_resource path="res://src/objects/torch/flicker_torch.gd" type="Script" id=3]
+[ext_resource path="res://src/objects/torch/feuer.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -13,18 +12,55 @@ length = 2.0
 loop = true
 step = 0.1
 
-[sub_resource type="Resource" id=2]
+[sub_resource type="Gradient" id=2]
 
-samples/torchfire = {
-"db": 0.0,
-"pitch": 1.0,
-"sample": ExtResource( 5 )
-}
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.0217391, 0.0217391, 0.0217391, 0.33149 )
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="GradientTexture" id=3]
 
-offsets = PoolRealArray( 0, 0.23812, 0.377546, 0.616188, 0.779634, 1 )
-colors = PoolColorArray( 0.671994, 0.64772, 0.886719, 1, 0.571679, 0.612213, 0.733816, 1, 0.760106, 0.792969, 0.192047, 1, 0.90625, 0.507553, 0.155762, 1, 0.883153, 0.327993, 0.219037, 1, 1, 1, 1, 1 )
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 5, 5, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, 10, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 0.0
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.5
+scale_random = 1.0
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Null" ]
 
 [node name="torch" type="Node2D"]
 
@@ -33,53 +69,19 @@ z_as_relative = false
 
 [node name="torch_sprite" type="Sprite" parent="."]
 
+self_modulate = Color( 0.535156, 0.516342, 0.516342, 1 )
 show_behind_parent = true
 position = Vector2( 28, 66 )
 texture = ExtResource( 1 )
-self_modulate = Color( 0.535156, 0.516342, 0.516342, 1 )
 
 [node name="torch_sprite_cut" type="Sprite" parent="."]
 
+self_modulate = Color( 0.535156, 0.516342, 0.516342, 1 )
 show_behind_parent = true
 position = Vector2( 33, 69 )
 texture = ExtResource( 1 )
-self_modulate = Color( 0.535156, 0.516342, 0.516342, 1 )
 region_enabled = true
 region_rect = Rect2( 5, 0, 16, 25 )
-
-[node name="smoke" type="Particles2D" parent="."]
-
-visibility/self_opacity = 0.054793
-position = Vector2( 27.1802, 46.1299 )
-rotation_deg = 180.0
-scale = Vector2( 0.539833, 0.82333 )
-config/amount = 32
-config/lifetime = 3.79836
-config/time_scale = 0.533389
-config/preprocess = 4.0
-config/explosiveness = 0.569839
-config/texture = ExtResource( 2 )
-params/direction = 0.0
-params/spread = 28.9353
-params/linear_velocity = 20.0
-params/spin_velocity = 5.0
-params/orbit_velocity = 0.5
-params/gravity_direction = 0.0
-params/gravity_strength = 3.0
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 1.0
-params/final_size = 5.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/direction = 1.0
-randomness/spread = 1.0
-randomness/linear_velocity = 1.0
-randomness/spin_velocity = 3.0
-color/color = Color( 0.277344, 0.26001, 0.511794, 0.489414 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -94,57 +96,45 @@ autoplay = "move_light"
 
 [node name="light_halo" type="Sprite" parent="."]
 
-visibility/blend_mode = 1
+self_modulate = Color( 0.855469, 0.762998, 0.340851, 0.524588 )
 position = Vector2( 29, 55 )
 z = 2
-texture = ExtResource( 3 )
-self_modulate = Color( 0.855469, 0.762998, 0.340851, 0.524588 )
-script = ExtResource( 4 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="SamplePlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 position = Vector2( 1.52588e-05, 10 )
-scale = Vector2( 1, 1 )
+stream = null
 volume_db = -8.68207
-pitch_scale = 1.0
-attenuation_min_distance = 200.0
-attenuation_max_distance = 300.0
-attenuation_distance_exp = 2.92817
-polyphony = 10
-samples = SubResource( 2 )
-random_pitch = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [node name="fire" type="Particles2D" parent="."]
 
-visibility/self_opacity = 0.338243
-position = Vector2( 28.1824, 52.1829 )
-rotation_deg = -180.0
-scale = Vector2( 0.539833, 0.82333 )
-config/amount = 10
-config/lifetime = 0.3
-config/time_scale = 0.91857
-config/preprocess = 1.0
-config/half_extents = Vector2( 3, 7 )
-config/explosiveness = 0.764255
-config/texture = ExtResource( 2 )
-params/direction = 0.0
-params/spread = 5.0
-params/linear_velocity = 78.3811
-params/spin_velocity = 1.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 35.0
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 13.7331
-params/initial_angle = 10.0
-params/initial_size = 1.0
-params/final_size = 0.2
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/spread = 1.0
-randomness/spin_velocity = 1.0
-randomness/initial_size = 1.0
-randomness/final_size = 0.1
-color/color_ramp = SubResource( 3 )
+position = Vector2( 27.2745, 57.5172 )
+rotation = -1.5718
+scale = Vector2( 0.628037, 0.512457 )
+emitting = true
+amount = 25
+lifetime = 1.02
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.44
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+
+

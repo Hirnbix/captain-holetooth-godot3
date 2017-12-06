@@ -12,6 +12,12 @@ func _ready():
 	if yan && global.last_pos[0] == Vector2(0,0):
 		yan.connect("met_yan", self,"_on_met_yan")
 	set_process_input(true)
+<<<<<<< HEAD
+=======
+	#update_scores()
+	#game.connect("scores_changed", self, "update_scores")
+	update_sound_hud()
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
 
 func _on_met_yan():
 	get_node("sfx").play("card_unlock")
@@ -21,6 +27,14 @@ func _input(event):
 	if Input.is_action_pressed("ui_cancel"):
 		_on_go_to_menu_pressed()
 	
+<<<<<<< HEAD
+=======
+# Update scores
+#func update_scores():
+#	get_node(collected_text).set_text(str(game.items_collected))
+#	get_node(score_text).set_text(str(game.score))
+#	get_node(highscore_text).set_text(str(game.high_score))
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
 
 func _on_go_to_menu_pressed():
 	transition.fade_to("res://src/screens/menu/menu.tscn")

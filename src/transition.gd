@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 # Animation player for fading
@@ -21,7 +20,7 @@ func fade_to(path):
 	anim.play("fade_in")
 	
 	# Wait until animation is finished
-	yield(anim, "finished")
+#	yield(anim, "finished")
 	
 	# Chance scene
 	get_tree().change_scene(path)

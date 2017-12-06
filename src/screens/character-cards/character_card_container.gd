@@ -27,8 +27,8 @@ func _ready():
 		var card_width = card_dimensions.x
 		print(str(card_width) + " " + str(card_height))
 		i += 1
-		character_cards_instance.set_pos(Vector2(left_margin + ((i % 3) * (innercard_margin_w + card_width)), top_margin + (floor(i / 3) * (innercard_margin_h + card_height))))
+		character_cards_instance.set_position(Vector2(left_margin + ((i % 3) * (innercard_margin_w + card_width)), top_margin + (floor(i / 3) * (innercard_margin_h + card_height))))
 		character_cards_instance.get_node("character_card_debug_label").set_text(character_card_name)
 		
-		print("Added instance number: " + str(i) + " - named: "+ character_card_name + " at "+ str(character_cards_instance.get_pos()))
+		print("Added instance number: " + str(i) + " - named: "+ character_card_name + " at "+ str(character_cards_instance.get_position()))
 		

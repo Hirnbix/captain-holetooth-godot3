@@ -1,31 +1,26 @@
-
-extends Control
-
-# Game Title
-export (NodePath) var game_title_path
-onready var game_title = get_node(game_title_path)
+extends Node
 
 # Menu Buttons
 export (NodePath) var menu_buttons_path
 onready var menu_buttons = get_node(menu_buttons_path)
 
 # Options Screen
-export (NodePath) var options_screen_path
-onready var options_screen = get_node(options_screen_path)
+
 
 # Music Player
-export (NodePath) var music_player_path
-onready var music_player = get_node(music_player_path)
+#export (NodePath) var music_player_path
+#onready var music_player = get_node(music_player_path)
 
 # Music Volume Slider
-export (NodePath) var music_volume_slider_path
-onready var music_volume_slider = get_node(music_volume_slider_path)
+#export (NodePath) var music_volume_slider_path
+#onready var music_volume_slider = get_node(music_volume_slider_path)
 
 # Animations
 export (NodePath) var animations_path
 onready var animations = get_node(animations_path)
 
 # Current Language Locale
+<<<<<<< HEAD
 var current_locale = TranslationServer.get_locale()
 
 
@@ -158,3 +153,6 @@ func _on_charactercardsbutton_pressed():
 
 func _on_candy_skull_button_pressed():
 	animations.connect("finished", animations, "play", ["wigglecandy"])
+=======
+var current_locale = TranslationServer.get_locale()
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
