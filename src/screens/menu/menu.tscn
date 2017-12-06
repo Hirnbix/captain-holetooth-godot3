@@ -90,28 +90,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 0.4, 0.4 ) ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("../character-cards:rect/pos")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/keys = {
-"times": PoolRealArray( 1.15, 1.35, 1.4, 1.45, 1.55, 1.65, 1.75, 1.8 ),
-"transitions": PoolRealArray( 0.25, 0.25, 4, 4, 1, 1, 0.25, 0.25 ),
-"update": 0,
-"values": [ Vector2( 168, -136 ), Vector2( 168, 136 ), Vector2( 168, 140 ), Vector2( 168, 144 ), Vector2( 168, 136 ), Vector2( 168, 144 ), Vector2( 168, 141 ), Vector2( 168, 144 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../character-cards:rect_rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
 
 [sub_resource type="Animation" id=2]
 
@@ -266,7 +244,7 @@ texture = ExtResource( 3 )
 
 [node name="splashscreen_schiff" type="Sprite" parent="art"]
 
-position = Vector2( 595.2, 280.4 )
+position = Vector2( 587.663, 214.077 )
 scale = Vector2( 0.8, 0.8 )
 z = 3
 texture = ExtResource( 4 )
@@ -285,26 +263,9 @@ texture = ExtResource( 4 )
 
 [node name="thruster" parent="art/splashscreen_schiff" instance=ExtResource( 5 )]
 
-position = Vector2( 85.0126, 23.0998 )
-scale = Vector2( 1, -1.78624 )
-emitting = true
-amount = 8
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = null
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
+position = Vector2( 121.93, 9.95934 )
+rotation = 0.197558
+scale = Vector2( 3.41926, 3.45555 )
 
 [node name="anims" type="AnimationPlayer" parent="art"]
 
@@ -331,16 +292,18 @@ __meta__ = {
 
 [node name="skull_eye" type="Sprite" parent="art/keyvisual_lochzahn"]
 
-position = Vector2( -107, 83 )
+position = Vector2( -107.433, 83.563 )
 z = 2
 texture = ExtResource( 7 )
+offset = Vector2( 0.807533, -0.312973 )
 script = ExtResource( 8 )
 
 [node name="skull_eye1" type="Sprite" parent="art/keyvisual_lochzahn"]
 
-position = Vector2( -123, 81 )
+position = Vector2( -122.929, 81.4389 )
 z = 2
 texture = ExtResource( 7 )
+offset = Vector2( 0.679428, -0.438858 )
 script = ExtResource( 8 )
 
 [node name="waterdrop" parent="art/keyvisual_lochzahn" instance=ExtResource( 9 )]
@@ -380,10 +343,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -312.0
-margin_top = -160.0
-margin_right = -492.0
-margin_bottom = -289.0
+margin_left = 278.0
+margin_top = 184.0
+margin_right = 458.0
+margin_bottom = 266.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -398,10 +361,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 583.0
-margin_top = 203.0
-margin_right = 763.0
-margin_bottom = 246.0
+margin_right = 180.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 180, 43 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -422,10 +383,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 583.0
-margin_top = 250.0
-margin_right = 733.0
-margin_bottom = 285.0
+margin_top = 47.0
+margin_right = 150.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 150, 35 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1090,10 +1050,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -56.0
-margin_top = 49.0
-margin_right = -120.0
-margin_bottom = -33.0
+margin_left = 7.0
+margin_top = 233.0
+margin_right = 71.0
+margin_bottom = 315.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0

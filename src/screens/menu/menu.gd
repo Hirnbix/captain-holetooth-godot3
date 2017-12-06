@@ -32,7 +32,6 @@ var current_locale = TranslationServer.get_locale()
 # -- START --
 func _ready():
 	# Update music player volume the initial music volume stored in global
-	music_volume_slider.set_value(global.music.volume * 100) 
 	# Set playtime limit field
 	get_node("options_screen/settings/Parental Controls/playtime_settings/playtime_limit").set_text(str(global.playtime_limit_minutes))
 	# Updates locale on scene

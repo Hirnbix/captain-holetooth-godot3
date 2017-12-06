@@ -11,7 +11,7 @@ func destroy(other):
 		
 	destroyed = true
 		
-	game.collect_item()
+
 	coin.take()
 	yield(coin, "taken")
 	queue_free()

@@ -4,9 +4,7 @@ onready var tabs = get_node("settings")
 
 
 func _ready():
-	var debug = find_node("Debug")
-	if !global.debug_mode:
-		debug.get_parent().remove_child(debug)
+	pass
 	
 
 func _input(event):

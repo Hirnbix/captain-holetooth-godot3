@@ -54,7 +54,6 @@ func _integrate_forces(s):
 					s.set_angular_velocity(sign(dp.x)*33.0)
 					set_friction(1)
 					cc.disable()
-					game.reset_bonus_score()
 					get_node("sfx").play("punch")
 
 					break

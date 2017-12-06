@@ -90,10 +90,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 select_dialogbox = NodePath("../hud/dialogbox")
 
-[node name="Sprite" parent="Yan"]
-
-frame = 0
-
 [node name="Particles2D" parent="Yan"]
 
 emitting = true

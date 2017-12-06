@@ -6,13 +6,6 @@ extends Node
 
 # Audio Data
 # Exampel of use: global.music.volume = 0.5 # Stores the music volume globally to 50%
-# You will have to make the actual changes in their appropriate scripts
-export var debug_mode = 1 # 1 for debug and 0 for release mode
-
-var music = {
-	volume = 0, # <0, 1> TODO: Set back to 1 when we are compiling for release. Turned it OFF to prevent going insane!
-	enabled = true,
-}
 
 #####################
 # Parental Controls #
@@ -49,9 +42,6 @@ var yankandy_score_total = 0
 # Scene related
 var currentScene = null
 
-# Check if player has visited a scene already and store the last position on leaving/spawning
-var last_pos = [Vector2(0,0),Vector2(0,0),Vector2(0,0)]
-
 # Array for characters the player has met (to display the character cards in the options later)
 # Captain Holetooth is in there by default
 var characters_met = ["Captain Holetooth"]
@@ -84,14 +74,3 @@ func manage_inv(inv_action, inv_item):
 	elif inv_action == "drop":
 		global.player_inventory.erase(inv_item)
 		print(str(inv_item) + " removed from inventory")
-
-##################
-# Database       #
-##################
-
-func _ready():
-	score = database.get_key("score", 0)
-
-func add_score(value=1):
-	score += value
-	database.set_key("score", score)

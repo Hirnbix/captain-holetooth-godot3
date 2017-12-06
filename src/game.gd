@@ -66,48 +66,6 @@ func load_game():
 	high_score = load_key("high_score", 0)
 	opened_scenes = load_key("opened_scenes", [])
 
-func save_game():
-	var save = File.new()
-	save.open(SAVE, File.WRITE)
-	save.store_string(db.to_json())
-	print("Game saved to " + SAVE)
-	
-func remove_save():
-	var save = File.new()
-	save.open(SAVE, File.WRITE)
-	save.store_string("")
-	
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		save_game()
-		get_tree().quit()
-		
-		
-func collect_item():
-	items_collected += 1
-	save_key("items_collected", items_collected)
-	
-	score += score_per_item
-	if score > high_score:
-		save_key("high_score", score)
-		high_score = score
-
-	emit_signal("scores_changed")
-	if MAX_SCORE_PER_ITEM == 0 || score_per_item <= MAX_SCORE_PER_ITEM:
-		score_per_item += 1
-
-func reset_bonus_score():
-	score_per_item = 1
-
-func open_scene(name):
-	if !is_scene_opened(name):
-		opened_scenes.append(name)
-		save_key("opened_scenes", opened_scenes)
-
-func is_scene_opened(name):
-	return opened_scenes.find(name) >= 0
-
-
 # returns timer you can wait for, eg:
 # yield(game.timer(0.5), "timeout") # wait for 0.5 sec
 func timer(time):
