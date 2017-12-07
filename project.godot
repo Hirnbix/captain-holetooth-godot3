@@ -35,6 +35,7 @@ window/size/height=288
 window/size/resizable=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+window/stretch/shrink="1"
 stretch/aspect="keep_height"
 stretch/mode="viewport"
 window/borderless=true
@@ -147,10 +148,13 @@ use_pixel_snap=true
 
 [render]
 
-mipmap_policy=1
+mipmap_policy=0
 
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
 quality/2d/use_pixel_snap=true
+quality/filters/use_nearest_mipmap_filter=true
+quality/filters/anisotropic_filter_level=1
+quality/shadows/filter_mode=2
 2d/use_pixel_snap=true
