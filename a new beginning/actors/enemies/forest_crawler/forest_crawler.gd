@@ -53,9 +53,14 @@ func _integrate_forces(s):
 					#lv = s.get_contact_local_normal(i)*400
 					s.set_angular_velocity(sign(dp.x)*33.0)
 					set_friction(1)
+<<<<<<< HEAD
+					cc.disable()
+					get_node("sfx").play("punch")
+=======
 					#cc.disable()
 					#game.reset_bonus_score()
 					#get_node("sfx").play("punch")
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
 
 					break
 

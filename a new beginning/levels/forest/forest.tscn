@@ -79,7 +79,41 @@ func _on_scene_teleporter_body_enter( body ):
 
 script = ExtResource( 1 )
 
+<<<<<<< HEAD
+[node name="Yan" parent="." instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 3883, 2270 )
+z = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+select_dialogbox = NodePath("../hud/dialogbox")
+
+[node name="Particles2D" parent="Yan"]
+
+emitting = true
+amount = 8
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = null
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+=======
 [node name="player" parent="." instance=ExtResource( 2 )]
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
 
 position = Vector2( 104, 1056 )
 z_as_relative = false

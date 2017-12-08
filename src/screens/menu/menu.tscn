@@ -1,0 +1,1227 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://src/screens/menu/menu.gd" type="Script" id=1]
+[ext_resource path="res://src/screens/menu/Control.gd" type="Script" id=2]
+[ext_resource path="res://src/fonts/newsgeek20.font" type="BitmapFont" id=3]
+[ext_resource path="res://src/fonts/newsgeek16.font" type="BitmapFont" id=4]
+[ext_resource path="res://src/screens/menu/options_screen.gd" type="Script" id=5]
+[ext_resource path="res://src/fonts/berry12.font" type="BitmapFont" id=6]
+[ext_resource path="res://src/fonts/berry8.font" type="BitmapFont" id=7]
+[ext_resource path="res://src/screens/menu/ui_templates/tab_styleboxflat.tres" type="StyleBox" id=8]
+[ext_resource path="res://src/screens/menu/ui_templates/tab_panel_flat.tres" type="StyleBox" id=9]
+[ext_resource path="res://src/fonts/berry16.font" type="BitmapFont" id=10]
+[ext_resource path="res://src/screens/menu/ui_templates/button_theme.tres" type="Theme" id=11]
+[ext_resource path="res://src/screens/global-ui-templates/menu_buttons.tres" type="StyleBox" id=12]
+[ext_resource path="res://src/fonts/menufont_24.font" type="BitmapFont" id=13]
+[ext_resource path="res://src/screens/ui-icons/icon-font-18/PNG/untitled-e90d.png" type="Texture" id=14]
+[ext_resource path="res://src/screens/menu/donate_button.tex" type="Texture" id=15]
+[ext_resource path="res://src/screens/menu/close_button.png" type="Texture" id=16]
+[ext_resource path="res://src/screens/menu/scn1_menu_gametitle_EN.png" type="Texture" id=17]
+[ext_resource path="res://src/objects/castle_ship_floating/ship_float_castle.png" type="Texture" id=18]
+[ext_resource path="res://src/screens/menu/splash_screen_lochzahn_single_scn1.png" type="Texture" id=19]
+[ext_resource path="res://src/screens/menu/skull_eye.png" type="Texture" id=20]
+[ext_resource path="res://src/screens/menu/skull_eye.gd" type="Script" id=21]
+[ext_resource path="res://src/objects/waterdrops/waterdrop.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/screens/menu/splash_screen_lochzahn_candy_hat.png" type="Texture" id=23]
+[ext_resource path="res://src/screens/menu/scn1_menu_bg.png" type="Texture" id=24]
+[ext_resource path="res://src/screens/menu/texture-button-character-card.png" type="Texture" id=25]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.768627, 0.615686, 0.415686, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="Theme" id=2]
+
+default_font = ExtResource( 7 )
+Button/colors/font_color = Color( 0.478431, 0.352941, 0.321569, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 3
+Button/fonts/font = ExtResource( 6 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = null
+TabContainer/colors/font_color_bg = Color( 0.632812, 0.517127, 0.365845, 1 )
+TabContainer/colors/font_color_fg = Color( 0.941176, 0.941176, 0.941176, 1 )
+TabContainer/constants/hseparation = 10
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 19
+TabContainer/fonts/font = ExtResource( 7 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_hilite = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_hilite = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_hilite = null
+TabContainer/styles/panel = null
+TabContainer/styles/tab_bg = null
+TabContainer/styles/tab_fg = null
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Control
+
+func _ready():
+	pass
+	
+func _process(delta):
+	if get_children().size()>0 && !get_children()[0].has_focus():
+		get_children()[0].grab_focus()
+		set_process(false)"
+
+[sub_resource type="Animation" id=4]
+
+length = 4.0
+loop = false
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("gametitle:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 4, 0.25, 0.25 ),
+"update": 0,
+"values": [ Vector2( 359, -90 ), Vector2( 359, 100 ), Vector2( 359, 100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("keyvisual_lochzahn:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8, 8 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("splashscreen_schiff:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 595.2, 280.4 ), Vector2( -274, 162 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("splashscreen_schiff/splashscreen_schiff1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.6, 5.45 ), Vector2( 102.347, 22.0765 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("splashscreen_schiff/splashscreen_schiff1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.4, 0.4 ) ]
+}
+<<<<<<< HEAD
+=======
+tracks/5/type = "value"
+tracks/5/path = NodePath("../character-cards/character-cards-button:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.66, 0.69, 0.72 ),
+"transitions": PoolRealArray( 1, 4, 4, 1 ),
+"update": 0,
+"values": [ Vector2( 44, 10 ), Vector2( 44, 320 ), Vector2( 44, 310 ), Vector2( 44, 320 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../character-cards/character-cards-button:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.66, 0.69, 0.72 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.0, 0.0 ]
+}
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+
+[sub_resource type="Animation" id=5]
+
+length = 0.3
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("keyvisual_lochzahn/candy_skull_button/candy_skull:rotation_deg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28 ),
+"transitions": PoolRealArray( -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25, -0.25 ),
+"update": 0,
+"values": [ 0.0, 20.0, 0.0, -20.0, 0.0, 0.0, 20.0, 0.0, -20.0, 0.0, 0.0, 20.0, 0.0, -20.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("keyvisual_lochzahn/candy_skull_button/candy_skull:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.28 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[node name="main_menu" type="Node"]
+
+script = ExtResource( 1 )
+menu_buttons_path = NodePath("Control")
+animations_path = NodePath("art/anims")
+
+<<<<<<< HEAD
+[node name="art" type="Node2D" parent="."]
+
+[node name="gametitle" type="Sprite" parent="art"]
+
+editor/display_folded = true
+position = Vector2( 359, -90 )
+z = 1
+texture = ExtResource( 2 )
+region_rect = Rect2( 8, 1, 264, 152 )
+
+[node name="gametitle1" type="Sprite" parent="art/gametitle"]
+
+self_modulate = Color( 0, 0, 0, 0.371608 )
+position = Vector2( 0, 3 )
+z = -1
+texture = ExtResource( 2 )
+region_rect = Rect2( 8, 1, 264, 152 )
+
+[node name="bg" type="Node2D" parent="art"]
+
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="splashscreen_bg" type="Sprite" parent="art/bg"]
+
+position = Vector2( 256, 144 )
+z = -1
+texture = ExtResource( 3 )
+
+[node name="splashscreen_schiff" type="Sprite" parent="art"]
+
+position = Vector2( 587.663, 214.077 )
+scale = Vector2( 0.8, 0.8 )
+z = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="splashscreen_schiff1" type="Sprite" parent="art/splashscreen_schiff"]
+
+self_modulate = Color( 0, 0, 0, 0.326798 )
+position = Vector2( 15.6, 5.45 )
+scale = Vector2( 0.8, 0.8 )
+z = 2
+z_as_relative = false
+texture = ExtResource( 4 )
+
+[node name="thruster" parent="art/splashscreen_schiff" instance=ExtResource( 5 )]
+
+position = Vector2( 121.93, 9.95934 )
+rotation = 0.197558
+scale = Vector2( 3.41926, 3.45555 )
+
+[node name="anims" type="AnimationPlayer" parent="art"]
+
+pause_mode = 1
+playback_process_mode = 1
+playback_default_blend_time = 1.0
+root_node = NodePath("..")
+anims/gametitle_animations = SubResource( 1 )
+anims/wigglecandy = SubResource( 2 )
+playback/active = true
+playback/speed = 0.5
+blend_times = [  ]
+autoplay = "gametitle_animations"
+
+[node name="keyvisual_lochzahn" type="Sprite" parent="art"]
+
+position = Vector2( 239, 146 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="skull_eye" type="Sprite" parent="art/keyvisual_lochzahn"]
+
+position = Vector2( -107.433, 83.563 )
+z = 2
+texture = ExtResource( 7 )
+offset = Vector2( 0.807533, -0.312973 )
+script = ExtResource( 8 )
+
+[node name="skull_eye1" type="Sprite" parent="art/keyvisual_lochzahn"]
+
+position = Vector2( -122.929, 81.4389 )
+z = 2
+texture = ExtResource( 7 )
+offset = Vector2( 0.679428, -0.438858 )
+script = ExtResource( 8 )
+
+[node name="waterdrop" parent="art/keyvisual_lochzahn" instance=ExtResource( 9 )]
+
+position = Vector2( -180.023, -41.2257 )
+scale = Vector2( 1, 1.3446 )
+
+[node name="candy_skull_button" type="TextureButton" parent="art/keyvisual_lochzahn"]
+=======
+[node name="Control" type="Control" parent="."]
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+<<<<<<< HEAD
+size_flags_horizontal = 2
+size_flags_vertical = 2
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+[node name="candy_skull" type="Sprite" parent="art/keyvisual_lochzahn/candy_skull_button"]
+
+position = Vector2( 19, 17 )
+texture = ExtResource( 10 )
+hframes = 2
+
+[node name="menu_buttons" type="VBoxContainer" parent="."]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 278.0
+margin_top = 184.0
+margin_right = 458.0
+margin_bottom = 266.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+=======
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 2 )
+options_screen_path = NodePath("../options_screen")
+
+[node name="startbutton" type="Button" parent="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+<<<<<<< HEAD
+margin_right = 180.0
+margin_bottom = 43.0
+=======
+margin_left = 288.0
+margin_top = 182.0
+margin_right = 468.0
+margin_bottom = 225.0
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+rect_min_size = Vector2( 180, 43 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start Game"
+flat = false
+
+[node name="optionsbutton" type="Button" parent="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+<<<<<<< HEAD
+margin_top = 47.0
+margin_right = 150.0
+margin_bottom = 82.0
+=======
+margin_left = 288.0
+margin_top = 232.0
+margin_right = 438.0
+margin_bottom = 267.0
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+rect_min_size = Vector2( 150, 35 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "Options / Info"
+flat = false
+
+[node name="options_screen" type="Node2D" parent="Control/optionsbutton"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -288, -232 )
+z = 5
+script = ExtResource( 5 )
+
+[node name="settings" type="TabContainer" parent="Control/optionsbutton/options_screen"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 16.0
+margin_right = 510.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = SubResource( 2 )
+custom_styles/tab_fg = ExtResource( 8 )
+custom_styles/panel = ExtResource( 9 )
+tab_align = 0
+tabs_visible = true
+
+[node name="Instructions" type="Tabs" parent="Control/optionsbutton/options_screen/settings"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_right = NodePath("../Debug")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+scrolling_enabled = true
+
+[node name="instruction_text" type="RichTextLabel" parent="Control/optionsbutton/options_screen/settings/Instructions"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 14.0
+margin_right = 16.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/normal_font = ExtResource( 7 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = false
+bbcode_text = "Welcome to Captain Holetooth!
+
+CONTROLS
+
+	R = Reset game and scores
+
+	Arrow Keys left/right = Move left and right
+
+	Arrow Key up = Jump up
+
+	Space  = Shoot
+	
+Enjoy :)"
+visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
+
+[node name="Debug" type="Tabs" parent="Control/optionsbutton/options_screen/settings"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/tab_fg = ExtResource( 8 )
+custom_fonts/font = ExtResource( 10 )
+scrolling_enabled = true
+script = SubResource( 3 )
+
+[node name="jump_scn3" type="Button" parent="Control/optionsbutton/options_screen/settings/Debug"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 10.0
+margin_right = 246.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_minigame")
+focus_neighbour_bottom = NodePath("../jump_scn4")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 11 )
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Forest Level"
+flat = false
+
+[node name="jump_scn4" type="Button" parent="Control/optionsbutton/options_screen/settings/Debug"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 50.0
+margin_right = 246.0
+margin_bottom = 82.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_scn3")
+focus_neighbour_bottom = NodePath("../jump_scn5")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 11 )
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Mountain Level"
+flat = false
+
+[node name="jump_scn5" type="Button" parent="Control/optionsbutton/options_screen/settings/Debug"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 91.0
+margin_right = 246.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_scn4")
+focus_neighbour_bottom = NodePath("../jump_castle")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 11 )
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Fly home Level"
+flat = false
+
+[node name="jump_castle" type="Button" parent="Control/optionsbutton/options_screen/settings/Debug"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 130.0
+margin_right = 246.0
+margin_bottom = 162.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_bottom = NodePath("../jump_minigame")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 11 )
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Castle Level"
+flat = false
+
+[node name="jump_minigame" type="Button" parent="Control/optionsbutton/options_screen/settings/Debug"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 178.0
+margin_right = 246.0
+margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../jump_castle")
+focus_neighbour_bottom = NodePath("../jump_scn3")
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 11 )
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play \"Yan Kandy\" Minigame"
+flat = false
+
+[node name="Parental Controls" type="Tabs" parent="Control/optionsbutton/options_screen/settings"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+scrolling_enabled = true
+
+[node name="instruction_text" type="RichTextLabel" parent="Control/optionsbutton/options_screen/settings/Parental Controls"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 14.0
+margin_right = 16.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/normal_font = ExtResource( 7 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "Hello parents!
+You are able to limit the daily playtime here and set the parental code.
+If you have more questions go to [url=https://www.hirnbix.com/parentalcontrols]https://www.hirnbix.com/parentalcontrols[/url]"
+visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
+
+[node name="playtime_settings" type="HBoxContainer" parent="Control/optionsbutton/options_screen/settings/Parental Controls"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 66.0
+margin_right = 468.0
+margin_bottom = 91.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
+alignment = 0
+
+[node name="playtime_limit_label" type="Label" parent="Control/optionsbutton/options_screen/settings/Parental Controls/playtime_settings"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 6.0
+margin_right = 218.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Adjust the duration of gameplay (in minutes)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="playtime_limit" type="LineEdit" parent="Control/optionsbutton/options_screen/settings/Parental Controls/playtime_settings"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 222.0
+margin_top = 1.0
+margin_right = 268.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+max_length = 2
+focus_mode = 2
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+context_menu_enabled = true
+
+[node name="playtime_confirm" type="Button" parent="Control/optionsbutton/options_screen/settings/Parental Controls/playtime_settings"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 272.0
+margin_right = 359.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/pressed = ExtResource( 12 )
+custom_styles/normal = ExtResource( 12 )
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Confirm"
+icon = ExtResource( 14 )
+flat = false
+
+[node name="Audio" type="Tabs" parent="Control/optionsbutton/options_screen/settings"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+scrolling_enabled = true
+
+[node name="vbox" type="VBoxContainer" parent="Control/optionsbutton/options_screen/settings/Audio"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
+alignment = 0
+
+[node name="hbox" type="HBoxContainer" parent="Control/optionsbutton/options_screen/settings/Audio/vbox"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 486.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_constants/separation = 20
+alignment = 0
+
+[node name="music_volume_label" type="Label" parent="Control/optionsbutton/options_screen/settings/Audio/vbox/hbox"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 2.0
+margin_right = 68.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Music Volume:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="volume_slide" type="HSlider" parent="Control/optionsbutton/options_screen/settings/Audio/vbox/hbox"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_right = 188.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 1.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+
+[node name="hbox1" type="HBoxContainer" parent="Control/optionsbutton/options_screen/settings/Audio/vbox"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 20.0
+margin_right = 486.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_constants/separation = 20
+alignment = 0
+
+[node name="Sound_volume_label" type="Label" parent="Control/optionsbutton/options_screen/settings/Audio/vbox/hbox1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 2.0
+margin_right = 72.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Sound Volume:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="volume_slide" type="HSlider" parent="Control/optionsbutton/options_screen/settings/Audio/vbox/hbox1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 92.0
+margin_right = 192.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 1.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+
+[node name="Credits" type="Tabs" parent="Control/optionsbutton/options_screen/settings"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 22.0
+margin_right = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 10 )
+scrolling_enabled = true
+
+[node name="credits_text" type="RichTextLabel" parent="Control/optionsbutton/options_screen/settings/Credits"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 5.0
+margin_bottom = 5.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/normal_font = ExtResource( 7 )
+custom_colors/default_color = Color( 0.996078, 0.905882, 0.729412, 1 )
+bbcode_enabled = false
+bbcode_text = "Programming
+	Oliver Ruehl
+	Yasha Bo
+	Ivan Skodje
+
+Game concept, Graphics
+	Oliver Ruehl
+
+Sound and music in minigame
+	freeman
+
+Music
+	Public Domain"
+visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
+
+[node name="donate_button" type="TextureButton" parent="Control/optionsbutton/options_screen/settings/Credits"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 267.0
+margin_top = 139.0
+margin_right = 603.0
+margin_bottom = 287.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 15 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Control/optionsbutton/options_screen"]
+
+z = -1
+polygon = PoolVector2Array( -10, -10, -10, 300, 520, 300, 520, -10 )
+uv = PoolVector2Array(  )
+color = Color( 0.27451, 0.156863, 0.211765, 0.876349 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation = 0.0
+invert_enable = false
+invert_border = 100.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="exitbutton" type="TextureButton" parent="Control/optionsbutton/options_screen"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -448.0
+margin_top = 22.0
+margin_right = -488.0
+margin_bottom = -18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 16 )
+
+[node name="art" type="Node2D" parent="."]
+
+z = -5
+
+[node name="gametitle" type="Sprite" parent="art"]
+
+editor/display_folded = true
+position = Vector2( 359, 100 )
+z = 1
+texture = ExtResource( 17 )
+region_rect = Rect2( 8, 1, 264, 152 )
+
+[node name="gametitle1" type="Sprite" parent="art/gametitle"]
+
+self_modulate = Color( 0, 0, 0, 0.371608 )
+position = Vector2( 0, 3 )
+z = -1
+texture = ExtResource( 17 )
+region_rect = Rect2( 8, 1, 264, 152 )
+
+[node name="splashscreen_schiff" type="Sprite" parent="art"]
+
+position = Vector2( 150.628, 219.842 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="splashscreen_schiff1" type="Sprite" parent="art/splashscreen_schiff"]
+
+self_modulate = Color( 0, 0, 0, 0.326798 )
+position = Vector2( 89.5479, 19.6233 )
+scale = Vector2( 0.645008, 0.645008 )
+z = -1
+texture = ExtResource( 18 )
+
+[node name="anims" type="AnimationPlayer" parent="art"]
+
+pause_mode = 1
+playback_process_mode = 1
+playback_default_blend_time = 1.0
+root_node = NodePath("..")
+anims/gametitle_animations = SubResource( 4 )
+anims/wigglecandy = SubResource( 5 )
+playback/active = true
+playback/speed = 0.5
+blend_times = [  ]
+autoplay = "gametitle_animations"
+
+[node name="keyvisual_lochzahn" type="Sprite" parent="art"]
+
+editor/display_folded = true
+position = Vector2( 239, 146 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="skull_eye" type="Sprite" parent="art/keyvisual_lochzahn"]
+
+position = Vector2( -107, 83 )
+z = 2
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+
+[node name="skull_eye1" type="Sprite" parent="art/keyvisual_lochzahn"]
+
+position = Vector2( -123, 81 )
+z = 2
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+
+[node name="waterdrop" parent="art/keyvisual_lochzahn" instance=ExtResource( 22 )]
+
+position = Vector2( -180.023, -41.2257 )
+scale = Vector2( 1, 1.3446 )
+
+[node name="candy_skull_button" type="TextureButton" parent="art/keyvisual_lochzahn"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -125.0
+margin_top = -129.0
+margin_right = -85.0
+margin_bottom = -89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+[node name="candy_skull" type="Sprite" parent="art/keyvisual_lochzahn/candy_skull_button"]
+
+position = Vector2( 19, 17 )
+texture = ExtResource( 23 )
+hframes = 2
+
+[node name="bg" type="Node2D" parent="art"]
+
+z = -6
+z_as_relative = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="splashscreen_bg" type="Sprite" parent="art/bg"]
+
+position = Vector2( 256, 144 )
+z = -5
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="character-cards" type="Control" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 168.0
+margin_top = -136.0
+margin_right = 192.0
+margin_bottom = -48.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="character-cards-button" type="TextureButton" parent="character-cards"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+<<<<<<< HEAD
+margin_left = 7.0
+margin_top = 233.0
+margin_right = 71.0
+margin_bottom = 315.0
+rect_pivot_offset = Vector2( 0, 0 )
+=======
+margin_left = 20.0
+margin_top = 232.0
+margin_right = 84.0
+margin_bottom = 344.0
+rect_pivot_offset = Vector2( 30.7894, 6.25153 )
+>>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 25 )
+
+[connection signal="pressed" from="Control/startbutton" to="Control" method="_on_startbutton_pressed"]
+
+[connection signal="pressed" from="Control/optionsbutton" to="Control" method="_on_optionsbutton_pressed"]
+
+[connection signal="tab_changed" from="Control/optionsbutton/options_screen/settings" to="Control/optionsbutton/options_screen" method="_on_settings_tab_changed"]
+
+
