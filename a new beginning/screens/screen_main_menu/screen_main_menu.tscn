@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://screens/menu/texture-button-character-card.png" type="Texture" id=1]
-[ext_resource path="res://screens/menu/splash_screen_lochzahn_single_scn1.png" type="Texture" id=2]
-[ext_resource path="res://screens/menu/scn1_menu_gametitle_EN.png" type="Texture" id=3]
-[ext_resource path="res://screens/menu/scn1_menu_bg.png" type="Texture" id=4]
+[ext_resource path="res://screens/screen_main_menu/menu_gui.gd" type="Script" id=1]
+[ext_resource path="res://screens/screen_main_menu/gfx/texture-button-character-card.png" type="Texture" id=2]
+[ext_resource path="res://screens/screen_main_menu/gfx/splash_screen_lochzahn_single_scn1.png" type="Texture" id=3]
+[ext_resource path="res://screens/screen_main_menu/gfx/scn1_menu_gametitle_EN.png" type="Texture" id=4]
+[ext_resource path="res://screens/screen_main_menu/gfx/scn1_menu_bg.png" type="Texture" id=5]
 
 [node name="screen_main_menu" type="Node2D"]
 
@@ -11,15 +12,15 @@
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
+scene_path = "res://levels/forest/level_forest.tscn"
 
 [node name="button_start_game" type="Button" parent="menu_gui"]
 
@@ -84,7 +85,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 1 )
+texture_normal = ExtResource( 2 )
 
 [node name="screen_main_menu_art" type="Sprite" parent="."]
 
@@ -94,7 +95,7 @@ z = -1
 
 position = Vector2( 240, 152 )
 z_as_relative = false
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -103,14 +104,16 @@ __meta__ = {
 
 position = Vector2( 360, 88 )
 z_as_relative = false
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="scn1_menu_bg" type="Sprite" parent="screen_main_menu_art"]
 
 position = Vector2( 256, 144 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[connection signal="pressed" from="menu_gui/button_start_game" to="menu_gui" method="_on_button_start_game_pressed"]
 
 

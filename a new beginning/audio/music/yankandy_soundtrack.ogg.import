@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/yankandy_soundtrack.ogg-30035061d92923c041b343863d404d61.oggstr"
+
+[deps]
+
+source_md5="f2d774f5b8df2e8319dd8b192ad13253"
+
+[params]
+
+loop=true
+loop_offset=0

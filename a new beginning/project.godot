@@ -11,7 +11,13 @@ config_version=3
 [application]
 
 config/name="CaptainHoletoothRemastered"
+run/main_scene="res://screens/screen_main_menu/screen_main_menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://global/global.gd"
+transition="*res://global/transition.tscn"
 
 [display]
 

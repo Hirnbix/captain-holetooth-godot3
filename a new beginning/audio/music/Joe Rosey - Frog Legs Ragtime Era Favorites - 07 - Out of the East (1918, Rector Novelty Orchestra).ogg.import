@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Joe Rosey - Frog Legs Ragtime Era Favorites - 07 - Out of the East (1918, Rector Novelty Orchestra).ogg-a7b8cacb7a76b6274c79fb09ebd82d60.oggstr"
+
+[deps]
+
+source_md5="52a8cf3b878f0d1e0264bf06dfcac053"
+
+[params]
+
+loop=true
+loop_offset=0

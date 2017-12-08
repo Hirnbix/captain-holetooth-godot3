@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/japsand.ogg-f3224416802bdb3b922014df65d0ff87.oggstr"
+
+[deps]
+
+source_md5="4ef9d792103f5c019b74734ec4866d8a"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://audio/sfx/sound_coin.wav" type="AudioStream" id=1]
+
+[node name="sfx" type="AudioStreamPlayer"]
+
+stream = ExtResource( 1 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+

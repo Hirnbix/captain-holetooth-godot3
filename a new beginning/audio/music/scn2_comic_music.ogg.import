@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scn2_comic_music.ogg-acb24cb5371acfc82f33bf92ad711d78.oggstr"
+
+[deps]
+
+source_md5="fb91aba0dbe4703a2fac6e71999458b5"
+
+[params]
+
+loop=true
+loop_offset=0

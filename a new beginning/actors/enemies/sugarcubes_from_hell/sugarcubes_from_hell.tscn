@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell.gd" type="Script" id=1]
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_01.png" type="Texture" id=2]
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_02.png" type="Texture" id=3]
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_03.png" type="Texture" id=4]
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_04.png" type="Texture" id=5]
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_05.png" type="Texture" id=6]
+[ext_resource path="res://actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_06.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.5
+} ]
+
+[sub_resource type="Animation" id=2]
+
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:extra_motion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -1.86607, -1.86607 ),
+"update": 0,
+"values": [ Vector2( 0, -200 ), Vector2( 0, 200 ) ]
+}
+
+[node name="sugarcube" type="Area2D"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitoring = false
+monitorable = false
+collision_layer = 4
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 1 )
+animation = "default"
+frame = 4
+playing = true
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+
+position = Vector2( 0, 3 )
+build_mode = 0
+polygon = PoolVector2Array( 2.87218, -21.0608, -9.88585, -21.6407, -21.716, -17.9292, -23.5717, 0.975838, -3.7388, 15.4736, 9.71513, 10.7183, 20.5015, 1.67173, 18.4138, -16.5375 )
+
+[node name="shoot_from" type="Node2D" parent="."]
+
+position = Vector2( -31.0824, 0.946671 )
+
+[node name="visibility" type="VisibilityNotifier2D" parent="."]
+
+position = Vector2( -25.2703, 0 )
+scale = Vector2( 0.231525, 1 )
+rect = Rect2( -30, -30, 300, 60 )
+
+[node name="anim_player" type="AnimationPlayer" parent="."]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+anims/explode = SubResource( 2 )
+anims/zigzag = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[connection signal="area_entered" from="." to="." method="_on_sugarcube_area_enter"]
+
+
