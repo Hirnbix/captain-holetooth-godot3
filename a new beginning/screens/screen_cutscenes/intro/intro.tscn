@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://screens/screen_cutscenes/intro/intro.gd" type="Script" id=1]
 [ext_resource path="res://screens/screen_cutscenes/intro/comic_intro_scn2-sheet.png" type="Texture" id=2]
-[ext_resource path="res://audio/music_player/music_player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://audio/music/scn2_comic_music.ogg" type="AudioStream" id=4]
 
 [sub_resource type="InputEventKey" id=1]
 
@@ -52,6 +50,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 stretch_mode = 0
 script = ExtResource( 1 )
+scene_path = "res://levels/forest/level_forest.tscn"
 
 [node name="skipbutton" type="TextureButton" parent="."]
 
@@ -110,10 +109,6 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "intro"
-
-[node name="music_player" parent="." instance=ExtResource( 3 )]
-
-stream = ExtResource( 4 )
 
 [connection signal="pressed" from="skipbutton" to="." method="_on_skipbutton_pressed"]
 

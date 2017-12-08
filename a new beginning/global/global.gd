@@ -6,16 +6,8 @@ extends Node
 
 # Audio Data
 # Exampel of use: global.music.volume = 0.5 # Stores the music volume globally to 50%
-<<<<<<< HEAD
-=======
-# You will have to make the actual changes in their appropriate scripts
-export var debug_mode = 0 # 1 for debug and 0 for release mode
 
-var music = {
-	volume = 1, # <0, 1> TODO: Set back to 1 when we are compiling for release. Turned it OFF to prevent going insane!
-	enabled = true,
-}
->>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
+# You will have to make the actual changes in their appropriate scripts
 
 #####################
 # Parental Controls #
@@ -70,6 +62,11 @@ var kills = false
 const SCORE_MULTIPLIER = 10 # Standard Score multiplier
 const SCORE_MULTIPLIER_KILLS = 5 # Player gets penalty
 
+# SCENES
+
+const scene_path_forest_scene = "res://levels/forest/level_forest.tscn"
+const scene_path_intro_screen = "res://screens/screen_cutscenes/intro/intro.tscn"
+
 ##################
 # Inventory      #
 ##################
@@ -84,23 +81,20 @@ func manage_inv(inv_action, inv_item):
 	elif inv_action == "drop":
 		global.player_inventory.erase(inv_item)
 		print(str(inv_item) + " removed from inventory")
-<<<<<<< HEAD
-=======
+
 
 ##################
 # Functions       #
 ##################
 
-<<<<<<< HEAD:a new beginning/global/global.gd
+
 # Change to scene path
 func switch_scene(scene_path):
 	get_tree().change_scene(scene_path)
-=======
+
 #func _ready():
 #	score = database.get_key("score", 0)
 
 #func add_score(value=1):
 #	score += value
 #	database.set_key("score", score)
->>>>>>> 4ea9e7f4c5dccf2ef074e13983a48a269afed4ac
->>>>>>> 8f12090a2f45130d4ec0daadbda114704c16a8c4:src/global.gd
