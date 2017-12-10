@@ -1,21 +1,23 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://actors/player/lochzahn_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://screens/hud/mobile_ui_player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/player/bullet.png" type="Texture" id=3]
+[ext_resource path="res://screens/hud/mobile_ui_player.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
 render_priority = 0
 trail_divisor = 1
-emission_shape = 0
+emission_shape = 1
+emission_sphere_radius = 1.0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
-spread = 45.0
+spread = 180.0
 flatness = 0.0
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 1.0
+gravity = Vector3( 59, 0, 0 )
+initial_velocity = 5.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
@@ -31,9 +33,9 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
-scale_random = 0.0
-color = Color( 1, 1, 1, 1 )
+scale = 2.0
+scale_random = 1.0
+color = Color( 1, 1, 1, 0.45302 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -252,14 +254,14 @@ script = ExtResource( 1 )
 
 texture = ExtResource( 2 )
 hframes = 26
-frame = 25
+frame = 21
 
 [node name="smoke" type="Particles2D" parent="sprite"]
 
 position = Vector2( 20.6719, 8.6485 )
 scale = Vector2( 0.831003, 0.816425 )
-emitting = true
-amount = 8
+emitting = false
+amount = 4
 lifetime = 1.0
 one_shot = false
 preprocess = 0.0
@@ -272,7 +274,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -335,7 +337,7 @@ shape = SubResource( 12 )
 
 shape = SubResource( 13 )
 
-[node name="mobile_ui_player" parent="." instance=ExtResource( 3 )]
+[node name="mobile_ui_player" parent="." instance=ExtResource( 4 )]
 
 [node name="left" parent="mobile_ui_player"]
 

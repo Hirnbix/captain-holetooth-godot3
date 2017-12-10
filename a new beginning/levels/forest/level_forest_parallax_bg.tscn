@@ -1,16 +1,55 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/forest/art/scroll_bg_sky.png" type="Texture" id=1]
 [ext_resource path="res://levels/forest/art/scroll_bg_cloud_1.png" type="Texture" id=2]
 [ext_resource path="res://levels/forest/art/scroll_bg_cloud_2.png" type="Texture" id=3]
 [ext_resource path="res://levels/flyhome/scroll_bg_cloud_3.png" type="Texture" id=4]
 [ext_resource path="res://levels/forest/art/scroll_bg_fg_1.png" type="Texture" id=5]
-[ext_resource path="res://levels/forest/art/scroll_bg_fg_2.png" type="Texture" id=6]
+[ext_resource path="res://levels/forest/art/smoke_house_spritesheet.png" type="Texture" id=6]
+[ext_resource path="res://levels/forest/art/scroll_bg_fg_2.png" type="Texture" id=7]
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 15, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 2.94273e-44
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
 
 [node name="parallax_bg" type="ParallaxBackground"]
 
 layer = -1
-offset = Vector2( 0, 0 )
+offset = Vector2( 0, -128 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 scroll_offset = Vector2( 0, 0 )
@@ -22,6 +61,7 @@ scroll_ignore_camera_zoom = false
 
 [node name="sky" type="ParallaxLayer" parent="."]
 
+position = Vector2( 0, -60 )
 motion_scale = Vector2( 1, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
@@ -34,7 +74,7 @@ centered = false
 
 [node name="clouds" type="ParallaxLayer" parent="."]
 
-position = Vector2( -27.7009, -11.0803 )
+position = Vector2( 0, -49 )
 motion_scale = Vector2( 0.1, 0.03 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
@@ -66,7 +106,6 @@ centered = false
 
 [node name="mountains" type="ParallaxLayer" parent="."]
 
-position = Vector2( 0, 29 )
 z_as_relative = false
 motion_scale = Vector2( 0.2, 0 )
 motion_offset = Vector2( 0, 0 )
@@ -83,10 +122,11 @@ region_rect = Rect2( 0, 0, 1024, 256 )
 [node name="house_smoke" type="Particles2D" parent="mountains"]
 
 show_behind_parent = true
-position = Vector2( 491.852, 78.2146 )
+position = Vector2( 484.925, 75.404 )
+rotation = 4.71758
 emitting = true
-amount = 8
-lifetime = 1.0
+amount = 14
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 1.0
@@ -97,10 +137,10 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = null
-texture = null
+process_material = SubResource( 1 )
+texture = ExtResource( 6 )
 normal_map = null
-h_frames = 1
+h_frames = 39
 v_frames = 1
 
 [node name="Sprite 3" type="Sprite" parent="mountains"]
@@ -112,7 +152,6 @@ centered = false
 
 [node name="hills" type="ParallaxLayer" parent="."]
 
-position = Vector2( 0, 54 )
 motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
@@ -120,7 +159,7 @@ motion_mirroring = Vector2( 1024, 0 )
 [node name="Sprite" type="Sprite" parent="hills"]
 
 position = Vector2( 0.02771, 145.086 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 1024, 256 )

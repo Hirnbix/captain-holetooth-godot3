@@ -1,4 +1,3 @@
-
 extends Node2D
 
 signal taken
@@ -14,4 +13,3 @@ func _ready():
 	var tex = load(tex_name)
 	anim.seek(seek, false)
 	sprite.set_texture(tex)
-
