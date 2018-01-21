@@ -2,11 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-3abcb12c7fd15440090a0a60845d16bc.stex"
+path="res://.import/10.png-fcbd4c56e69f13189bc1ba42b0f3fd7f.stex"
 
 [deps]
 
-source_md5="adcb0f977e7064d90d06b3c94dd95245"
+source_file="res://objects/rewards/10.png"
+source_md5="a01a5a40afb7eb6e3eeb3262e05dc9e7"
+
+dest_files=[ "res://.import/10.png-fcbd4c56e69f13189bc1ba42b0f3fd7f.stex" ]
+dest_md5="68df64d60ec94565f84123d33fa1163d"
 
 [params]
 
