@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/forest/art/scroll_bg_sky.png" type="Texture" id=1]
 [ext_resource path="res://levels/forest/art/scroll_bg_cloud_1.png" type="Texture" id=2]
@@ -8,7 +8,20 @@
 [ext_resource path="res://levels/forest/art/smoke_house_spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://levels/forest/art/scroll_bg_fg_2.png" type="Texture" id=7]
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="Curve" id=1]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [  ]
+
+[sub_resource type="CurveTexture" id=2]
+
+flags = 4
+width = 2048
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
 
 render_priority = 0
 trail_divisor = 1
@@ -24,7 +37,7 @@ initial_velocity_random = 0.0
 angular_velocity = 2.94273e-44
 angular_velocity_random = 0.0
 orbit_velocity = 0.0
-orbit_velocity_random = 0.0
+orbit_velocity_random = 1.0
 linear_accel = 0.0
 linear_accel_random = 0.0
 radial_accel = 0.0
@@ -44,14 +57,17 @@ anim_speed = 0.0
 anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
+anim_offset_curve = SubResource( 2 )
 anim_loop = false
+_sections_unfolded = [ "Animation", "Orbit Velocity" ]
 
-[node name="parallax_bg" type="ParallaxBackground"]
+[node name="parallax_bg" type="ParallaxBackground" index="0"]
 
 layer = -1
 offset = Vector2( 0, -128 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, -128 )
 scroll_offset = Vector2( 0, 0 )
 scroll_base_offset = Vector2( 0, 0 )
 scroll_base_scale = Vector2( 0.7, 0.2 )
@@ -59,59 +75,59 @@ scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = false
 
-[node name="sky" type="ParallaxLayer" parent="."]
+[node name="sky" type="ParallaxLayer" parent="." index="0"]
 
 position = Vector2( 0, -60 )
 motion_scale = Vector2( 1, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
 
-[node name="Sprite" type="Sprite" parent="sky"]
+[node name="Sprite" type="Sprite" parent="sky" index="0"]
 
 scale = Vector2( 32, 0.675983 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="clouds" type="ParallaxLayer" parent="."]
+[node name="clouds" type="ParallaxLayer" parent="." index="1"]
 
 position = Vector2( 0, -49 )
 motion_scale = Vector2( 0.1, 0.03 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
 
-[node name="Sprite" type="Sprite" parent="clouds"]
+[node name="Sprite" type="Sprite" parent="clouds" index="0"]
 
 position = Vector2( 82.9768, 34.4884 )
 scale = Vector2( 0.570494, 0.570494 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Sprite 2" type="Sprite" parent="clouds"]
+[node name="Sprite 2" type="Sprite" parent="clouds" index="1"]
 
 position = Vector2( 404, 30 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Sprite 4" type="Sprite" parent="clouds"]
+[node name="Sprite 4" type="Sprite" parent="clouds" index="2"]
 
 position = Vector2( 686.547, 49.17 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Sprite 6" type="Sprite" parent="clouds"]
+[node name="Sprite 6" type="Sprite" parent="clouds" index="3"]
 
 position = Vector2( 919.165, 47.12 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="mountains" type="ParallaxLayer" parent="."]
+[node name="mountains" type="ParallaxLayer" parent="." index="2"]
 
 z_as_relative = false
 motion_scale = Vector2( 0.2, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
 
-[node name="Sprite" type="Sprite" parent="mountains"]
+[node name="Sprite" type="Sprite" parent="mountains" index="0"]
 
 position = Vector2( 0.13574, -11.9219 )
 texture = ExtResource( 5 )
@@ -119,44 +135,46 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 1024, 256 )
 
-[node name="house_smoke" type="Particles2D" parent="mountains"]
+[node name="house_smoke" type="Particles2D" parent="mountains" index="1"]
 
 show_behind_parent = true
-position = Vector2( 484.925, 75.404 )
+position = Vector2( 489.972, 79.3575 )
 rotation = 4.71758
+scale = Vector2( 1, 0.396974 )
 emitting = true
-amount = 14
-lifetime = 3.0
+amount = 100
+lifetime = 1.5
 one_shot = false
 preprocess = 0.0
-speed_scale = 1.0
+speed_scale = 0.55
 explosiveness = 0.0
-randomness = 0.0
+randomness = 0.04
 fixed_fps = 0
 fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 1 )
+process_material = SubResource( 3 )
 texture = ExtResource( 6 )
 normal_map = null
 h_frames = 39
 v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform", "Z Index" ]
 
-[node name="Sprite 3" type="Sprite" parent="mountains"]
+[node name="Sprite 3" type="Sprite" parent="mountains" index="2"]
 
 position = Vector2( 168.991, 143.266 )
 scale = Vector2( 0.666471, 0.666471 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="hills" type="ParallaxLayer" parent="."]
+[node name="hills" type="ParallaxLayer" parent="." index="3"]
 
 motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1024, 0 )
 
-[node name="Sprite" type="Sprite" parent="hills"]
+[node name="Sprite" type="Sprite" parent="hills" index="0"]
 
 position = Vector2( 0.02771, 145.086 )
 texture = ExtResource( 7 )
